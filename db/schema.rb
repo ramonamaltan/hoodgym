@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_222041) do
+ActiveRecord::Schema.define(version: 2020_12_11_100937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "equipment_offers", force: :cascade do |t|
+    t.string "name"
+    t.boolean "availability", default: true
+    t.boolean "presence", default: true
+    t.boolean "locked", default: true
+    t.bigint "station_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["station_id"], name: "index_equipment_offers_on_station_id"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "equipment_offer_id", null: false
+    t.datetime "begin_at"
+    t.datetime "end_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["equipment_offer_id"], name: "index_rentals_on_equipment_offer_id"
+    t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
+
+  create_table "stations", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +52,15 @@ ActiveRecord::Schema.define(version: 2020_12_07_222041) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "time_account"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "equipment_offers", "stations"
+  add_foreign_key "rentals", "equipment_offers"
+  add_foreign_key "rentals", "users"
 end
