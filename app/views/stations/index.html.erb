@@ -1,3 +1,15 @@
-<% @stations.each do |station| %>
-<%= station.name %>
-<% end %>
+<div class="container">
+  <div class="stations-cards p-3">
+      
+      <% @stations.each do |station| %>
+      <div class="card-station py-2">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-station-infos">
+          <h2><%= station.name %></h2>
+          <p>Station description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+      <% end %>
+    
+  </div>
+</div>
