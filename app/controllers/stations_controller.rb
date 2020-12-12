@@ -1,5 +1,5 @@
 class StationsController < ApplicationController
   def index
-    @stations = Station.all
+    @stations = policy_scope(Station).order(created_at: :desc)
   end
 end
