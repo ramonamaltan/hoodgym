@@ -9,4 +9,8 @@ class StationsController < ApplicationController
       }
     end
   end
+
+  def show
+    @station = Station.find(params[:id])
+  end
 end
