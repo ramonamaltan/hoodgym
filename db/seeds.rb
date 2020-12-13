@@ -13,9 +13,9 @@ freeletics_station = Station.create(name: 'Freeletics Training Ground', location
 beuth_station = Station.create(name: 'Beuth Hochschule', location: 'Luxemburger Str. 10, 13353 Berlin')
 
 puts 'Start seeding equipment_offers'
-dumbbell15_freeletics = EquipmentOffer.create(name: '15kg Dumbbell', station_id: freeletics_station.id)
+dumbbell15_freeletics = EquipmentOffer.create(name: '15kg Dumbbell', station_id: freeletics_station.id, item_id: 1)
 # dumbbell15_freeletics = EquipmentOffer.create(name: '5kg Dumbbell', station_id: freeletics_station.id)
-dumbbell15_beuth = EquipmentOffer.create(name: '15kg Dumbbell', station_id: beuth_station.id)
+dumbbell15_beuth = EquipmentOffer.create(name: '15kg Dumbbell', station_id: beuth_station.id, item_id: 2)
 # dumbbell5_beuth = EquipmentOffer.create(name: '5kg Dumbbell', station_id: beuth_station.id)
 
 puts 'Start seeding rentals'
