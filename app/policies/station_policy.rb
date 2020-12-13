@@ -5,8 +5,8 @@ class StationPolicy < ApplicationPolicy
     end
   end
 
-  def show
-    true
+  def show?
+    return true
   end
   
 end
