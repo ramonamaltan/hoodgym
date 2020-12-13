@@ -1,1 +1,24 @@
-<h2>HI</h2>
+<div class="container">
+  <div class="station-banner">
+    <%= image_tag('station1.jpg', alt: 'Calisthenics park', style: 'width: 100vw; height:50vh; object-fit: cover;z-index:0;')%>
+    <div class="station-banner-text"><%= @station.name %></div>
+  </div>
+
+  <div class="item-list">
+    <h1>Item List</h1>
+    <ul><% @station.equipment_offers.each do |equip| %>
+      <li><%= equip.name %></li>
+    <% end %></ul>
+  </div>
+
+  <div class="directions">
+    <div id="map"
+      style="width: 200px; height: 200px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <div class="location">
+      <%= @station.location %>
+    </div>
+  </div>
+</div>
