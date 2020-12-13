@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="height:100vh;">
+  <%= image_tag('home1.jpg', alt: 'Man training with dumbbell', style: 'width: 100vw; height:100vh; object-fit: cover;z-index:0;')  %>
+  <div class="banner-text">
+    <h1>Hood Gym</h1>
+    <i class="fas fa-arrow-down"></i>
+  </div>
+</div>
+<div>
+  <%= image_tag('home2.jpg', alt: 'Man doing wallballs', style: 'width: 100vw; height:60vh; object-fit: cover;')  %>
+  <%= image_tag('home3.jpg', alt: 'Woman squatting with weights', style: 'width: 100vw; height:60vh; object-fit: cover;')  %>
+</div>
+
+<div class="black-part">
+  <div class="explore-stations">
+    <i class="fas fa-dumbbell"></i>
+    <h2>Stations</h2>
+    <p>Explore rental stations nearby</p>
+    <button class="btn btn-primary">Discover</button>
+  </div>
+    <div class="pricing">
+    <h2>Pricing</h2>
+    <p>Stay flexible</p>
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <h6>Package 1</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      <div class="pricing-card">
+        <h6>Package 2</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      <div class="pricing-card">
+        <h6>Package 3</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <button class="btn btn-primary">Buy credits</button>
+  </div>
+</div>

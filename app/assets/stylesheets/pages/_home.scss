@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+.banner-text {
+  z-index: 1;
+  position: relative;
+  color: white;
+  bottom: 28vh;
+  margin: auto;
+  width: 30vw;
+  text-align: center;
+}
+
+.fa-arrow-down:before {
+  font-size: 2.4rem;
+}
+
+.black-part {
+  background: black;
+  color: white;
+}
+
+.explore-stations {
+  padding: 5%;
+  text-align: center;
+}
+
+.pricing {
+  padding: 5%;
+  text-align: center;
+}
+
+.pricing-cards {
+  display: wrap;
+}
+
+.pricing-card {
+  margin: 2%;
+  padding: 3%;
+  background-color: grey;
+}
+
+.pricing-card p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+@media (min-width: 410px) {
+  .pricing-cards {
+    display: flex;
+  }
+}
