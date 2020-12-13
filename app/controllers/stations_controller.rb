@@ -12,5 +12,6 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.find(params[:id])
+    authorize @station
   end
 end
