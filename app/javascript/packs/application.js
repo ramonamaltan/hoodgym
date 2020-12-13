@@ -25,10 +25,12 @@ require("channels")
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports
+import { initMapbox } from '../plugins/init_mapbox';
+import { initNavbarToggle } from '../components/init_navbar_toggle';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  // Call your functions here
+  initMapbox();
+  initNavbarToggle();
 });
