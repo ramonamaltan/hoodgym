@@ -9,11 +9,11 @@
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .topnav button {
@@ -24,14 +24,23 @@
   display: block;
 }
 
+.topnav #logo {
+  font-size: 2rem;
+}
+
+.topnav .fa-bars {
+  font-size: 2rem;
+  padding: 10px;
+}
+
 /* Change the color of links on hover */
 .topnav a:hover {
-  color: black;
+  color: white;
 }
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  color: black;
+  color: white;
 }
 
 /* Hide the link that should open and close the topnav on small screens */

@@ -1,0 +1,43 @@
+.overlay {
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.95);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 414px) {
+  .overlay {
+    height: 250px;
+    width: 320px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 415px) {
+  .overlay {
+    height: 300px;
+    width: 380px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 650px) {
+  .overlay {
+    height: 350px;
+    width: 440px;
+  }
+}
+
+// large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .overlay {
+    height: 400px;
+    width: 500px;
+  }
+}
