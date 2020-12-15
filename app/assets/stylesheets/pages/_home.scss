@@ -14,17 +14,17 @@
 }
 
 .black-part {
-  background: black;
+  padding: 5%;
+  background: $hg-background;
   color: white;
 }
 
 .explore-stations {
-  padding: 5%;
   text-align: center;
+  margin-bottom: 8%;
 }
 
 .pricing {
-  padding: 5%;
   text-align: center;
 }
 
@@ -34,8 +34,8 @@
 
 .pricing-card {
   margin: 2%;
-  padding: 3%;
-  background-color: grey;
+  padding: 2%;
+  background-color: $hg-overlay;
 }
 
 .pricing-card p {
