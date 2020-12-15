@@ -1,9 +1,9 @@
-.center-station-cards {
+.station-cards-center {
   display: flex;
   justify-content: center;
 }
 
-.container {
+.index-container {
   margin: 0;
   padding: 0;
 }
@@ -13,7 +13,8 @@
   bottom:0;
   z-index: 0;
 }
-#section1-container {
+
+#section-stations-container {
   position: relative;
   z-index: 1;
   top: 55vh;
