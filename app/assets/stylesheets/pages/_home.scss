@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+.banner {
+  height: 100vh;
+  position: absolute;
+  bottom:0;
+  z-index: 0;
+}
+
 .banner-text {
   z-index: 1;
   position: relative;
