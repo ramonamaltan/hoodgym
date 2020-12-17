@@ -1,12 +1,16 @@
 <div class="container-training">
   <h1><%= @station.name %></h1>
 
+  <p>1 Item in Ausleihe</p>
   <div class="current-rent">
-    <p>1 Item in Ausleihe</p>
+  <div class="flex-spacebetween">
     <p>7-15kg</p>
     <p>00:13:42</p>
+  </div>
+  <div class="flex-spacebetween">
     <p>Gesamt:</p>
-    <p>00:28:19</p>
+    <p>&nbsp;00:28:19</p>
+  </div>
   </div>
 
   <% @equipment_offers.each do |item| %>

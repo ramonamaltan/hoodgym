@@ -1,10 +1,13 @@
 .container-training {
   padding: 0 32px;
+  max-width: 500px;
 }
 
 .container-training h1 {
   font-size: 1.8rem;
   font-weight: bold;
+  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .container-training p {
@@ -12,7 +15,7 @@
 }
 
 .current-rent {
-  padding: 16px 0;
+  width: max-content;
 }
 
 .equipment-overview {
@@ -20,7 +23,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
 .equipment-overview h5 {

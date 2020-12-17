@@ -8,3 +8,13 @@ body {
   color: white;
   background: $hg-background;
 }
+
+.flex-spacearound {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-spacebetween {
+  display: flex;
+  justify-content: space-between;
+}
