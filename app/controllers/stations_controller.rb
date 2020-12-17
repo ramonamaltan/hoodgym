@@ -6,7 +6,8 @@ class StationsController < ApplicationController
       {
         lat: station.latitude,
         lng: station.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { station: station })
+        infoWindow: render_to_string(partial: "info_window", locals: { station: station }),
+        image_url: helpers.asset_url('training-emoji2.jpg')
       }
     end
   end
