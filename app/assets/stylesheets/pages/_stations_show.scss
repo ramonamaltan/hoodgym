@@ -18,7 +18,7 @@
 }
 
 .container-text {
-  padding: 28px 32px 28px 32px;
+  padding: 32px 24px 32px 24px;
 }
 
 .item-list {
@@ -38,7 +38,15 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
-  margin-right: 32px;
+  margin-right: 24px;
+}
+
+.directions-block {
+  display: block;
+}
+
+.directions-address {
+  margin-bottom: 16px;
 }
 
 .flex-images {

@@ -13,11 +13,12 @@
       <% end %></ul>
     </div>
 
-    
-    <h5>Directions</h5>
     <div class="directions-flex">
       <%= image_tag('monbijou.png', alt: '') %>
-      <%= @station.location %>
+      <div class="directions-block">
+        <div class="directions-address"><%= @station.location%></div>
+        <a href="https://goo.gl/maps/CaBoopSyDZB6ekSZ7" class="btn-red">Route</a>
+      </div>
     </div>
   </div>
 
