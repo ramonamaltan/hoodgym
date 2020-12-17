@@ -21,9 +21,24 @@
   padding: 28px 32px 28px 32px;
 }
 
+.item-list {
+  margin-bottom: 32px;
+}
+
 .item-list ul {
   padding: 0;
   list-style: inside;
+}
+
+.directions-flex {
+  display: flex;
+}
+
+.directions-flex img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 32px;
 }
 
 .flex-images {
