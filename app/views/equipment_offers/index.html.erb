@@ -1,0 +1,25 @@
+<div class="container-training">
+  <h1><%= @station.name %></h1>
+
+  <div class="current-rent">
+    <p>1 Item in Ausleihe</p>
+    <p>7-15kg: 00:13:42</p>
+    <p>Gesamt: 00:28:19</p>
+  </div>
+
+  <div class="equipment-overview">
+    <% @equipment_offers.each do |item| %>
+      <%= item.name %>
+      <% if item.availability == true %>
+        <button class="btn-green">Rent now</button>
+      <% elsif item.availability == false # && current user is renting %>
+        <%# item.rentals.each do |rental| %>
+          <%#= rental.user_id %>
+        <%# end %>
+        <button class="btn-yellow">rented by you</button>
+      <% else %>
+        <button class="btn-darkred">In use</button>
+      <% end %>
+    <% end %>
+  </div>
+</div>
