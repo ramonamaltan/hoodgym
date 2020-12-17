@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
+.banner {
+  height: 100vh;
+  margin-top: -150px;
+  bottom:0;
+  z-index: 0;
+}
+
 .banner-text {
   z-index: 1;
   position: relative;
@@ -13,18 +20,18 @@
   font-size: 2.4rem;
 }
 
-.black-part {
-  background: black;
+.section-black {
+  padding: 5%;
+  background: $hg-background;
   color: white;
 }
 
-.explore-stations {
-  padding: 5%;
+.section-explore-stations {
   text-align: center;
+  margin-bottom: 8%;
 }
 
-.pricing {
-  padding: 5%;
+.section-pricing {
   text-align: center;
 }
 
@@ -34,8 +41,8 @@
 
 .pricing-card {
   margin: 2%;
-  padding: 3%;
-  background-color: grey;
+  padding: 2%;
+  background-color: $hg-overlay;
 }
 
 .pricing-card p {

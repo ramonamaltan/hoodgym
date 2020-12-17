@@ -1,4 +1,4 @@
-<div class="banner" style="height:100vh;">
+<div class="banner">
   <%= image_tag('home1.jpg', alt: 'Man training with dumbbell', style: 'width: 100vw; height:100vh; object-fit: cover;z-index:0;')  %>
   <div class="banner-text">
     <h1>Hood Gym</h1>
@@ -6,18 +6,18 @@
   </div>
 </div>
 <div>
-  <%= image_tag('home2.jpg', alt: 'Man doing wallballs', style: 'width: 100vw; height:60vh; object-fit: cover;')  %>
-  <%= image_tag('home3.jpg', alt: 'Woman squatting with weights', style: 'width: 100vw; height:60vh; object-fit: cover;')  %>
+  <%= image_tag('home2.jpg', alt: 'Man doing wallballs', style: 'width: 100vw; height:30vh; object-fit: cover;')  %>
+  <%= image_tag('home3.jpg', alt: 'Woman squatting with weights', style: 'width: 100vw; height:30vh; object-fit: cover;')  %>
 </div>
 
-<div class="black-part">
-  <div class="explore-stations">
+<div class="section-black">
+  <div class="section-explore-stations">
     <i class="fas fa-dumbbell"></i>
     <h2>Stations</h2>
     <p>Explore rental stations nearby</p>
-    <button class="btn btn-primary">Discover</button>
+    <button class="btn btn-red">Discover</button>
   </div>
-    <div class="pricing">
+    <div class="section-pricing">
     <h2>Pricing</h2>
     <p>Stay flexible</p>
     <div class="pricing-cards">
@@ -34,6 +34,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       </div>
     </div>
-    <button class="btn btn-primary">Buy credits</button>
+    <button class="btn btn-red">Buy credits</button>
   </div>
 </div>
+<%= render 'shared/footer' %>
