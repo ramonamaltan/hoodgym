@@ -28,5 +28,15 @@
 }
 
 .directions {
-  padding: 12px 24px 0 42px;
+  padding: 12px 24px 32px 42px;
+}
+
+.flex-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-images img {
+  width: 45vw;
+  object-fit: cover;
 }
