@@ -1,4 +1,4 @@
-.show-container {
+.padding-outside {
   padding: 0 12px;
   background: $hg-background;
   min-height: 80vh;
@@ -11,24 +11,19 @@
 }
 
 .station-banner-text {
-  padding: 32px 0 0 42px;
   font-size: 1.8rem;
   font-weight: bold;
-  width: 60vw;
+  width: 90%
   line-height: 1.2;
 }
 
-.item-list {
-  padding: 36px 24px 0 42px;
+.container-text {
+  padding: 28px 32px 28px 32px;
 }
 
 .item-list ul {
   padding: 0;
   list-style: inside;
-}
-
-.directions {
-  padding: 12px 24px 32px 42px;
 }
 
 .flex-images {

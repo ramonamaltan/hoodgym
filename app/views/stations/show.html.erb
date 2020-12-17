@@ -1,21 +1,22 @@
-<div class="show-container">
+<div class="padding-outside">
   <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
-    <div class="station-banner-text">
+    <div class="container-text station-banner-text">
       <%= @station.name %>
     </div>
-
   </div>
 
-  <div class="item-list">
-    <h5>Item List</h5>
-    <ul><% @station.equipment_offers.each do |equip| %>
-      <li><%= equip.name %></li>
-    <% end %></ul>
-  </div>
+  <div class="container-text">
+    <div class="item-list">
+      <h5>Item List</h5>
+      <ul><% @station.equipment_offers.each do |equip| %>
+        <li><%= equip.name %></li>
+      <% end %></ul>
+    </div>
 
-  <div class="directions">
-    <h5>Directions</h5>
-    <%= @station.location %>
+    <div class="directions">
+      <h5>Directions</h5>
+      <%= @station.location %>
+    </div>
   </div>
 
   <div class="flex-images">
