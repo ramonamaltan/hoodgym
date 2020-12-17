@@ -9,9 +9,9 @@
     <p>00:28:19</p>
   </div>
 
-  <div class="equipment-overview">
-    <% @equipment_offers.each do |item| %>
-      <%= item.name %>
+  <% @equipment_offers.each do |item| %>
+    <div class="equipment-overview">
+      <h5><%= item.name %></h5>
       <% if item.availability == true %>
         <button class="btn-green">Rent now</button>
       <% elsif item.availability == false # && current user is renting %>
@@ -22,6 +22,6 @@
       <% else %>
         <button class="btn-darkred">In use</button>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
