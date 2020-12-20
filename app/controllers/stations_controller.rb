@@ -5,7 +5,9 @@ class StationsController < ApplicationController
     @markers = @stations.geocoded.map do |station|
       {
         lat: station.latitude,
-        lng: station.longitude
+        lng: station.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { station: station }),
+        image_url: helpers.asset_url('training-emoji2.jpg')
       }
     end
   end
