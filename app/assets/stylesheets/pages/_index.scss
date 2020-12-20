@@ -1,3 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "stations_index";
+@import "stations_show";
+
+body {
+  color: white;
+}

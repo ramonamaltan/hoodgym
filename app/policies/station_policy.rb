@@ -4,5 +4,9 @@ class StationPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    return true
+  end
   
 end
