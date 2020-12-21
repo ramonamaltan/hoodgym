@@ -49,12 +49,7 @@
   margin-bottom: 16px;
 }
 
-.flex-images {
-  display: flex;
-  justify-content: space-around;
-}
-
-.flex-images img {
+.flex-spacearound img {
   width: 45vw;
   object-fit: cover;
 }
