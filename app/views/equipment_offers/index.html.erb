@@ -12,18 +12,17 @@
     <p>&nbsp;00:28:19</p>
   </div>
   </div>
-
+  <%= @current_user %>
   <% @equipment_offers.each do |item| %>
     <div class="equipment-overview">
       <h5><%= item.name %></h5>
       <% if item.availability == true %>
         <button class="btn-green">Rent now</button>
-      <% elsif item.availability == false # && current user is renting %>
-        <%# item.rentals.each do |rental| %>
-          <%#= rental.user_id %>
-        <%# end %>
+      <%# To check if item 'rented by you' look for last rental time is current time AND rental user is current user %>
+      <% elsif item.rentals.last.begin_at < DateTime.now() && item.rentals.last.end_at > DateTime.now() && item.rentals.last.user == @current_user %>
         <button class="btn-yellow">rented by you</button>
       <% else %>
+      <%# To check if item 'in use' look for last rental time is time now --> rentals = rentals.last.end_at %>
         <button class="btn-darkred">In use</button>
       <% end %>
     </div>
