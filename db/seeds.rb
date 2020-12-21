@@ -13,13 +13,13 @@ freeletics_station = Station.create(name: 'Freeletics Training Ground', location
 beuth_station = Station.create(name: 'Beuth Hochschule', location: 'Luxemburger Str. 10, 13353 Berlin')
 
 puts 'Start seeding equipment_offers'
-dumbbell15_freeletics = EquipmentOffer.create(name: '15kg Dumbbell', station_id: freeletics_station.id, item_id: 1)
-# dumbbell15_freeletics = EquipmentOffer.create(name: '5kg Dumbbell', station_id: freeletics_station.id)
+dumbbell15_freeletics1 = EquipmentOffer.create(name: '15kg Dumbbell', station_id: freeletics_station.id, item_id: 1)
+dumbbell15_freeletics2 = EquipmentOffer.create(name: '5kg Dumbbell', station_id: freeletics_station.id, item_id: 3, availability: false)
 dumbbell15_beuth = EquipmentOffer.create(name: '15kg Dumbbell', station_id: beuth_station.id, item_id: 2)
 # dumbbell5_beuth = EquipmentOffer.create(name: '5kg Dumbbell', station_id: beuth_station.id)
 
 puts 'Start seeding rentals'
-rental1 = Rental.create(begin_at: '2020-12-19 09:26:03.478039', end_at: '2012-12-19 10:26:03', user_id: ramona.id, equipment_offer_id: dumbbell15_freeletics.id)
+rental1 = Rental.create(begin_at: '2020-12-19 09:26:03', end_at: '2012-12-19 10:26:03', user_id: ramona.id, equipment_offer_id: dumbbell15_freeletics1.id)
 
 
 puts "Finished Seeding: #{User.count} users, #{Rental.count} rentals, #{EquipmentOffer.count} equipment offers and #{Station.count} stations"

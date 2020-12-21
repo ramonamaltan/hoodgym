@@ -3,5 +3,6 @@ class EquipmentOffer < ApplicationRecord
   has_many :rentals
   has_many :users, through: :rentals
 
-  validates :name, :availability, :presence, :locked, presence: true
+  validates :name, presence: true
+  validates :availability, :presence, :locked, inclusion: [true, false]
 end
