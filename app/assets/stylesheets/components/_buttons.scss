@@ -5,6 +5,7 @@
   background: $hg-red;
   transition: background 0.3s ease;
   border: none;
+  text-decoration: none;
 }
 
 .btn-red:hover {
@@ -19,6 +20,7 @@
   background: $hg-darkred;
   cursor: default;
   border: none;
+  text-decoration: none;
 }
 
 .btn-darkred:hover {
@@ -32,6 +34,7 @@
   background: $hg-green;
   transition: background 0.3s ease;
   border: none;
+  text-decoration: none;
 }
 
 .btn-green:hover {
@@ -46,6 +49,7 @@
   background: $hg-yellow;
   transition: background 0.3s ease;
   border: none;
+  text-decoration: none;
 }
 
 .btn-yellow:hover {
@@ -60,6 +64,7 @@
   border-radius: 4px;
   font-weight: lighter;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-ghost:hover {
