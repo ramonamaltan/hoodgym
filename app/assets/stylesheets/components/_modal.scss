@@ -1,24 +1,24 @@
 /* The Modal (background) */
-.modal-rented {
-  display: none; /* hidden by default */
+.modal {
+  display: none;
   position: fixed;
   z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.95);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  margin: auto;
+  text-align: center;
 }
 
 /* Modal Content/Box */
 .modal-rented-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+  margin: 15% auto;
+} 
 
 /* The Close Button */
 .modal-rented-close {
@@ -33,4 +33,36 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 414px) {
+  .modal {
+    height: 250px;
+    width: 320px;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 415px) {
+  .modal {
+    height: 300px;
+    width: 380px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 650px) {
+  .modal {
+    height: 350px;
+    width: 440px;
+  }
+}
+
+// large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .modal {
+    height: 400px;
+    width: 500px;
+  }
 }
