@@ -28,9 +28,11 @@ import "bootstrap";
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initNavbarToggle } from '../components/init_navbar_toggle';
+import { initModalRented } from '../components/init_modal_rented';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initMapbox();
   initNavbarToggle();
+  //initModalRented();
 });
