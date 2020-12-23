@@ -15,6 +15,7 @@
               <h2><%= station.name %></h2>
               <p>Station description with <strong>relevant info</strong> only.</p>
             </div>
+            <%= link_to 'See more', station_path(station), class: 'btn-red mx-3' %>
           </div>
           <% end %>
       </div>
