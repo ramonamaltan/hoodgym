@@ -38,7 +38,7 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 414px) {
   .modal {
-    height: 250px;
+    height: 260px;
     width: 320px;
   }
 }
@@ -46,7 +46,7 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 415px) {
   .modal {
-    height: 300px;
+    height: 290px;
     width: 380px;
   }
 }
@@ -54,15 +54,15 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 650px) {
   .modal {
-    height: 350px;
-    width: 440px;
+    height: 310px;
+    width: 430px;
   }
 }
 
 // large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .modal {
-    height: 400px;
-    width: 500px;
+    min-height: 320px;
+    width: 480px;
   }
 }
