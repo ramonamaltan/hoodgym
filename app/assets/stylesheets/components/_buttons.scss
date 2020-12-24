@@ -60,11 +60,14 @@
 .btn-ghost {
   color: white;
   border: 1px solid white;
-  padding: 8px 16px;
+  padding: 2px 16px;
   border-radius: 4px;
   font-weight: lighter;
   transition: background 0.3s ease;
   text-decoration: none;
+  background: transparent;
+  display: inline-block;
+  margin-top: 16px;
 }
 
 .btn-ghost:hover {
