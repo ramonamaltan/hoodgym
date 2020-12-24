@@ -3,22 +3,17 @@
 
   <p><%= @myrentals.count %> Item in Ausleihe</p>
   <div class="current-rent">
-    <div class="flex-spacebetween">
       <% @myrentals.each do |rental| %>
-        <%= rental.equipment_offer.name %>
-        <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
-        <% mm, ss = t.divmod(60) %>
-        <% hh, mm = mm.divmod(60) %>
-        <% if ss.between?(1, 10) %>
-          <p>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </p>
-        <% else %>
-          <p>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
+          <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
+          <% mm, ss = t.divmod(60) %>
+          <% hh, mm = mm.divmod(60) %>
+          <% if ss.between?(1, 10) %>
+            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </p>
+          <% else %>
+            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-    <div class="flex-spacebetween">
       <p>Gesamt: <%#= "#{hh}:#{mm}:#{ss}" %> </p>
-    </div>
   </div>
 
   <% @equipment_offers.each do |item| %>
