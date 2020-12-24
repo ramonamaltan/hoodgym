@@ -8,8 +8,11 @@
       <p>00:13:42</p>
     </div>
     <div class="flex-spacebetween">
-      <p>Gesamt:</p>
-      <p>&nbsp;00:28:19</p>
+      <%# t = (DateTime.now().utc - item.rentals.last.begin_at).round.abs %>
+      <%# mm, ss = t.divmod(60) %>
+      <%# hh, mm = mm.divmod(60) %>
+      <%# dd, hh = hh.divmod(24) %>
+      <p>Gesamt: <%#= "#{hh}:#{mm}:#{ss}" %> </p>
     </div>
   </div>
 
@@ -17,11 +20,34 @@
     <div class="equipment-overview">
       <h5 id="item-rented"><%= item.name %></h5>
       <% if item.availability == true %>
-        <button class="btn-green">Rent now</button>
+        <button id="button-rented" class="btn-green">Rent now</button>
+        <!-- Rented by you button click -->
+        <div id="modal-rented" class="modal">
+          <!-- Modal content -->
+          <span class="modal-rented-close px-3">&times;</span>
+          <div class="modal-rented-content">
+            <h5>Pick up</h5>
+            <h5><%= item.name %></h5>
+            <h5>to start rent</h5>
+            <button class="btn-ghost">Cancel rent</button>
+          </div>
+        </div>
+
       <%# To check if item 'rented by you' look for last rental time is current time AND rental user is current user %>
       <% elsif item.rentals.last.begin_at < DateTime.now().utc && item.rentals.last.end_at.nil? && item.rentals.last.user == @current_user %>
         <button id="button-rented" class="btn-yellow">rented by you</button>
-        <%= render 'components/modal_rented' %>
+        <!-- Rented by you button click -->
+        <div id="modal-rented" class="modal">
+          <!-- Modal content -->
+          <span class="modal-rented-close px-3">&times;</span>
+          <div class="modal-rented-content">
+            <h5><%= item.name %></h5>
+            <h5>Rented since</h5>
+            <h5><%= item.rentals.last.begin_at.localtime.strftime('%I:%M%P') %></h5>
+          </div>
+          <span ><p>Return item and close lock to end rent.</p></span>
+        </div>
+
       <% else %>
       <%# To check if item 'in use' look for last rental time is time now --> rentals = rentals.last.end_at %>
         <button class="btn-darkred">In use</button>
