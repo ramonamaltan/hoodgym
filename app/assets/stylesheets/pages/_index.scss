@@ -9,6 +9,10 @@ body {
   background: $hg-background;
 }
 
+h1 {
+  font-family: "Arvo", "Helvetica", "sans-serif";
+}
+
 .flex-spacearound {
   display: flex;
   justify-content: space-around;
