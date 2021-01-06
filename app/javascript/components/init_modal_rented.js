@@ -6,14 +6,13 @@ const initModalRented = () => {
   // get the span element that closes the modal
   const closingModals = document.querySelectorAll('.modal-rented-close');
   
-  // When the user clicks on the button, open the modal
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      modalsRented.forEach((modal) => {
-        modal.style.display = "block";
-      });
-    }); 
-  });
+  // When the user clicks on a button, open the right modal
+  for(let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', () => {
+      modalsRented[i].style.display = "block";
+    });
+  };
+
 
   // When the user clicks on <span> (x), close the modal
   closingModals.forEach((close) => {
