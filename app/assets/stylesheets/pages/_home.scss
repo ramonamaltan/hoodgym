@@ -32,6 +32,7 @@
 
 .section-pricing {
   text-align: center;
+  padding: 0 16px;
 }
 
 .pricing-cards {
@@ -43,20 +44,18 @@
 .pricing-card {
   min-height: auto;
   overflow: auto;
-  margin: 2%;
+  margin: 8px;
   padding: 16px 36px 24px 36px;
   background-color: $hg-overlay;
 }
 
-@media (min-width: 410px) {
+@media (min-width: 630px) {
   .pricing-cards {
     display: flex;
   }
-}
 
-  @media (min-width: 410px) and (max-width: 650px) {
   .pricing-card {
-    min-height: 180px;
-    padding: 16px 16px 24px 16px;
+    min-height: 200px;
+    padding: 36px 36px 42px 36px;
   }
 }
