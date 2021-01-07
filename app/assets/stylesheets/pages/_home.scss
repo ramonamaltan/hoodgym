@@ -37,21 +37,39 @@
 
 .pricing-cards {
   display: wrap;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .pricing-card {
+  min-height: auto;
+  overflow: auto;
   margin: 2%;
-  padding: 2%;
+  padding: 16px 36px 24px 36px;
   background-color: $hg-overlay;
 }
 
-.pricing-card p {
+.text {
   margin: 0;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 410px) {
   .pricing-cards {
     display: flex;
+  }
+
+  .pricing-card {
+    min-height: 180px;
+    padding: 16px 16px 24px 16px;
+  }
+}
+
+@media (min-width: 650px) {
+  .pricing-card {
+    padding: 16px 16px 24px 16px;
   }
 }
