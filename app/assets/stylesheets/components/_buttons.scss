@@ -1,6 +1,6 @@
 .btn-red {
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   background: $hg-red;
   transition: background 0.3s ease;
@@ -15,7 +15,7 @@
 
 .btn-darkred {
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   background: $hg-darkred;
   cursor: default;
@@ -29,7 +29,7 @@
 
 .btn-green {
   color: white;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 4px;
   background: $hg-green;
   transition: background 0.3s ease;
@@ -44,7 +44,7 @@
 
 .btn-yellow {
   color: white;
-  padding: 8px 8px;
+  padding: 6px 8px;
   border-radius: 4px;
   background: $hg-yellow;
   transition: background 0.3s ease;
@@ -60,7 +60,7 @@
 .btn-ghost {
   color: white;
   border: 1px solid white;
-  padding: 2px 16px;
+  padding: 4px 12px;
   border-radius: 4px;
   font-weight: lighter;
   transition: background 0.3s ease;
