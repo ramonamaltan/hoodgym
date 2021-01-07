@@ -27,7 +27,12 @@
 
 .section-explore-stations {
   text-align: center;
-  margin-bottom: 8%;
+}
+
+.section-explore-stations .icon {
+  padding: 12px;
+  border-radius: 50%;
+  background: $hg-indigo;
 }
 
 .section-pricing {
@@ -37,8 +42,6 @@
 
 .pricing-cards {
   display: wrap;
-  margin-bottom: 16px;
-  margin-top: 16px;
 }
 
 .pricing-card {
