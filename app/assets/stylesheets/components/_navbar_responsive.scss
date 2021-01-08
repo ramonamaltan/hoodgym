@@ -1,90 +1,105 @@
-/* Add a black background color to the top navigation */
-.topnav {
+/* Header style */
+.header {
+  &_logo {
+    img {
+      width: 1.375rem;
+      height: 1.375rem;
+    }
+  }
+
+  &_links {
+    a {
+      position: relative;
+      color: white;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      margin: 2rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 3px;
+        left: 0;
+        right: 0;
+        top: 2rem;
+        background: $hg-indigo;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+
+      &:hover {
+        transition: color 300ms ease-in-out;
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+nav button {
+  margin-left: 2rem;
+}
+
+nav .mainMenu {
+  list-style: none;
+  margin: 0;
+}
+
+nav .mainMenu .closeMenu , .openMenu, .icons i {
+  font-size: 1.6rem;
+  display: none;
+  cursor: pointer;
+}
+
+@media(max-width: 1023px){
+  .header_links {
+    a {
+      margin: 0;
+      font-size: 1.2rem;
+      padding: 4px;
+      display: inline-block;
+    }
+  }
+  nav button {
+    margin: 0;
+  }
+
+  nav .mainMenu {
+      height: 60vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $hg-background;
+      transition: top 300ms ease;
+      display: none;
+  }
+
+  nav .mainMenu .closeMenu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  nav .openMenu {
+      display: block;
+  }
+}
+
+
+
+
+/* Add a black background color to the top navigation
+ .topnav {
   overflow: hidden;
   position: relative;
   z-index: 1;
   background: $hg-background;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.topnav button {
-  background: none;
-  border: none;
-  font-weight: bold;
-  float: left;
-  display: block;
-}
-
-.topnav #logo {
-  font-size: 2rem;
-}
-
-.topnav .fa-bars {
-  font-size: 2rem;
-  padding: 10px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  color: white;
-}
-
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
-
-/* Add Responsiveness */
-
-@media (min-width: 600px) {
-  .topnav a {
-    float: right;
-    display: block;
-    text-align: right;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: right;
-  }
-
-  .topnav.responsive {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
+} */
