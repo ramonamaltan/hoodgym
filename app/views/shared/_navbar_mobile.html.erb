@@ -1,26 +1,18 @@
 <header>
-  <div class="overlay-menu">
-    <P>TEST WITH SOME TEXT1111</P>
-  </div>
-  <nav class="flex flex-jc-sb flex-ai-c p-4">
+  <nav class="flex flex-jc-sb flex-ai-c px-4 py-3">
     <a href="/" class="header_logo">
       <%= image_tag('training-emoji2.jpg', alt: 'Hoodgym logo')  %>
     </a>
-    <a id="btnHamburger" href="#" class="header_menu hide-for-desktop">
-      <div class="block" id="hamburgerIcon"><i class="fa fa-bars"></i></div>
-      <div class="none" id="closeHamburger">&times;</div>
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
 
-    <div class="header_links hide-for-mobile">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Pricing</a>
-      <a href="#">Blog</a>
-      <button class="btn-underlined">Login</button>
-    </div>
+    <div class="openMenu"><i class="fa fa-bars"></i></div>
+    <ul class="mainMenu header_links flex flex-jc-sa flex-ai-c">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">About</a></li>
+      <button class="btn-ghost my-2">Login</button>
+      <div class="closeMenu"><i class="fa fa-times"></i></div>
+    </ul>
 
   </nav>
 </header>

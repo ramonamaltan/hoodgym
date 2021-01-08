@@ -1,17 +1,18 @@
 const initNavbarToggle = () => {
-  const btnHamburger = document.getElementById("btnHamburger");
-  const hamburgerIcon = document.getElementById("hamburgerIcon");
-  const closeHamburger = document.getElementById("closeHamburger");
-  btnHamburger.addEventListener('click', () => {
-    console.log('open');
-    // toggle hamburgerIcon
-    hamburgerIcon.classList.toggle('block');
-    hamburgerIcon.classList.toggle('none');
-    // toggle x
-    closeHamburger.classList.toggle('none');
-    closeHamburger.classList.toggle('block');
+  const mainMenu = document.querySelector(".mainMenu");
+  const openMenu = document.querySelector(".openMenu");
+  const closeMenu = document.querySelector(".closeMenu");
+
+  openMenu.addEventListener('click', () => {
+    // show menu
+    mainMenu.style.display = 'flex';
+    mainMenu.style.top = '0';
   });
 
+  closeMenu.addEventListener('click', () => {
+    // show menu
+    mainMenu.style.top = '-100%';
+  });
 };
 
 export { initNavbarToggle };

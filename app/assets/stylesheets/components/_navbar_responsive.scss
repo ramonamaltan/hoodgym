@@ -7,32 +7,13 @@
     }
   }
 
-  &_menu {
-    > .none {
-      display: none;
-    }
-
-    > .block {
-      display: block;
-    }
-
-    > div {
-      color: white;
-      font-size: 1.6rem;
-    }
-
-    > span {
-      display: block;
-    }
-  }
-
   &_links {
     a {
       position: relative;
       color: white;
-      padding-right: 8px;
-      padding-left: 8px;
-      margin-right: 48px;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      margin: 2rem;
 
       &::before {
         content: "";
@@ -41,14 +22,13 @@
         height: 3px;
         left: 0;
         right: 0;
-        top: 28px;
-        background: lime;
+        top: 2rem;
+        background: $hg-indigo;
         opacity: 0;
         transition: opacity 300ms ease-in-out;
       }
 
       &:hover {
-        color: grey;
         transition: color 300ms ease-in-out;
         &:before {
           opacity: 1;
@@ -58,51 +38,63 @@
   }
 }
 
-.overlay-menu {
-  width: 380px;
-  padding: 24px;
-  position: absolute;
-  z-index: 1;
-  background-color: $hg-background;
-  top: 100px;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
+nav button {
+  margin-left: 2rem;
 }
 
-// Breakpoints
-// 640px, 1024px, 1400px
-$breakpoints-up: ("medium": "40em", "large": "64em", "x-large": "87.5em");
-// 639px, 1023px, 1399px
-$breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.4375em");
+nav .mainMenu {
+  list-style: none;
+  margin: 0;
+}
 
-@mixin breakpoint-up($size) {
-  @media (min-width: map-get($breakpoints-up, $size)) {
-    @content;
+nav .mainMenu .closeMenu , .openMenu, .icons i {
+  font-size: 1.6rem;
+  display: none;
+  cursor: pointer;
+}
+
+@media(max-width: 1023px){
+  .header_links {
+    a {
+      margin: 0;
+      font-size: 1.2rem;
+      padding: 4px;
+      display: inline-block;
+    }
+  }
+  nav button {
+    margin: 0;
+  }
+
+  nav .mainMenu {
+      height: 60vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $hg-background;
+      transition: top 300ms ease;
+      display: none;
+  }
+
+  nav .mainMenu .closeMenu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  nav .openMenu {
+      display: block;
   }
 }
 
-@mixin breakpoint-down($size) {
-  @media (max-width: map-get($breakpoints-down, $size)) {
-    @content;
-  }
-}
 
-// Add Responsiveness
-.hide-for-mobile {
-  // hide for tablet and mobile
-  @include breakpoint-down(medium){
-    display: none;
-  }
-}
 
-.hide-for-desktop {
-  // hide for desktop
-  @include breakpoint-up(large){
-    display: none;
-  }
-}
 
 /* Add a black background color to the top navigation
  .topnav {
