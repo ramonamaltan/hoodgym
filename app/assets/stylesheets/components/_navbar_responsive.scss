@@ -33,13 +33,16 @@
         left: 0;
         right: 0;
         top: 28px;
+        background: lime;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
       }
 
       &:hover {
         color: grey;
-        transition: color 200ms ease-in-out;
+        transition: color 300ms ease-in-out;
         &:before {
-          background: lime;
+          opacity: 1;
         }
       }
     }
