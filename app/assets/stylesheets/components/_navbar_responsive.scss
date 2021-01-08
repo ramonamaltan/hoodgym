@@ -58,6 +58,19 @@
   }
 }
 
+.overlay-menu {
+  width: 380px;
+  padding: 24px;
+  position: absolute;
+  z-index: 1;
+  background-color: $hg-background;
+  top: 100px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
 // Breakpoints
 // 640px, 1024px, 1400px
 $breakpoints-up: ("medium": "40em", "large": "64em", "x-large": "87.5em");
