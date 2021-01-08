@@ -13,6 +13,22 @@ h1 {
   font-family: "Arvo", "Helvetica", "sans-serif";
 }
 
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-sa {
+    justify-content: space-around;
+  }
+  
+  &-ai-c {
+    align-items: center;
+  }
+}
+
 .flex-spacearound {
   display: flex;
   justify-content: space-around;
@@ -25,4 +41,8 @@ h1 {
 
 .block {
   display: block;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
 }

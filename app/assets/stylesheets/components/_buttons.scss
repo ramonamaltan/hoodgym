@@ -78,3 +78,17 @@
   background-color: $hg-overlay;
   color:white;
 }
+
+.btn-underlined {
+  color: white;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.btn-underlined:hover {
+  background-color: $hg-overlay;
+  color:white;
+}

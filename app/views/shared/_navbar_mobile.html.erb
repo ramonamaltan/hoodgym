@@ -1,10 +1,33 @@
-<div class="topnav" id="myTopnav">
+<header>
+  <nav class="flex flex-jc-sb flex-ai-c p-3">
+    <a href="/" class="header_logo">
+      <%= image_tag('training-emoji2.jpg', alt: 'Hoodgym logo')  %>
+    </a>
+    <a href="#" class="header_menu">
+      <i class="fa fa-bars"></i>
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+
+    <div class="header_links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+    </div>
+
+    <button class="btn-underlined">Login</button>
+  </nav>
+</header>
+
+<%# <div class="topnav" id="myTopnav">
   <button><%= link_to 'HG', root_path, id: "logo"%></button>
-  <a href="#"></a>
+<%#   <a href="#"></a>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
   <a href="javascript:void(0);" class="icon">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+    <i class="fa fa-bars"></i> %>
+ <%#  </a>
+</div> %>
 
