@@ -8,10 +8,19 @@
   }
 
   &_menu {
-    > i {
+    > .none {
+      display: none;
+    }
+
+    > .block {
+      display: block;
+    }
+
+    > div {
       color: white;
       font-size: 1.6rem;
     }
+
     > span {
       display: block;
     }

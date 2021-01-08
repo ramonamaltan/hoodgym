@@ -1,10 +1,23 @@
 const initNavbarToggle = () => {
-  const x = document.getElementById("myTopnav");
-  x.addEventListener('click', () => {
-    if (x.className === "topnav") {
-      x.className += " responsive";
+  const btnHamburger = document.getElementById("btnHamburger");
+  const hamburgerIcon = document.getElementById("hamburgerIcon");
+  const closeHamburger = document.getElementById("closeHamburger");
+  btnHamburger.addEventListener('click', () => {
+    console.log('open');
+    if (hamburgerIcon.classList.contains('block')) {
+      // don't show hamburgerIcon
+      hamburgerIcon.classList.remove('block');
+      hamburgerIcon.classList.add('none');
+      // show x
+      closeHamburger.classList.remove('none');
+      closeHamburger.classList.add('block');
     } else {
-      x.className = "topnav";
+      // show hamburgIcon
+      hamburgerIcon.classList.add('block');
+      hamburgerIcon.classList.remove('none');
+      // hide x
+      closeHamburger.classList.remove('block');
+      closeHamburger.classList.add('none');
     }
   });
 
