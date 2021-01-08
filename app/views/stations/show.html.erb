@@ -1,32 +1,34 @@
-<div class="padding-outside">
-  <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
-    <div class="container-text station-banner-text">
-      <%= @station.name %>
-    </div>
-  </div>
-
-  <div class="container-text">
-    <div class="item-list">
-      <h5>Item List</h5>
-      <ul><% @station.equipment_offers.each do |equip| %>
-        <li><%= equip.name %></li>
-      <% end %></ul>
-    </div>
-
-    <div class="directions-flex">
-      <%= image_tag('monbijou.png', alt: '') %>
-      <div class="directions-block">
-        <div class="directions-address"><%= @station.location%></div>
-        <a href="https://goo.gl/maps/CaBoopSyDZB6ekSZ7" class="btn-red">Route</a>
+<div class="page-container">
+  <div class="padding-outside">
+    <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
+      <div class="container-text station-banner-text">
+        <%= @station.name %>
       </div>
     </div>
+
+    <div class="container-text">
+      <div class="item-list">
+        <h5>Item List</h5>
+        <ul><% @station.equipment_offers.each do |equip| %>
+          <li><%= equip.name %></li>
+        <% end %></ul>
+      </div>
+
+      <div class="directions-flex">
+        <%= image_tag('monbijou.png', alt: '') %>
+        <div class="directions-block">
+          <div class="directions-address"><%= @station.location%></div>
+          <a href="https://goo.gl/maps/CaBoopSyDZB6ekSZ7" class="btn-red">Route</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-spacearound">
+      <%= image_tag('station1.jpg', alt: '') %>
+      <%= image_tag('station1.jpg', alt: '') %>
+    </div>
+    <%= link_to 'Back to all stations', stations_path, class: 'btn-red' %>
   </div>
 
-  <div class="flex-spacearound">
-    <%= image_tag('station1.jpg', alt: '') %>
-    <%= image_tag('station1.jpg', alt: '') %>
-  </div>
-  <%= link_to 'Back to all stations', stations_path, class: 'btn-red' %>
+  <%= render 'shared/footer' %>
 </div>
-
-<%= render 'shared/footer' %>

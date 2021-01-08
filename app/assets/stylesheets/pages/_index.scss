@@ -9,7 +9,24 @@ body {
   background: $hg-background;
 }
 
-h1 {
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+}
+
+ h1 {
   font-family: "Arvo", "Helvetica", "sans-serif";
 }
 
