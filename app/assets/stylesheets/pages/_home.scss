@@ -1,23 +1,22 @@
 // Specific CSS for your home-page
 .banner {
-  height: 100vh;
-  margin-top: -150px;
-  bottom:0;
-  z-index: 0;
-}
+  height: 90vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 
-.banner-text {
-  z-index: 1;
-  position: relative;
-  color: white;
-  bottom: 28vh;
-  margin: auto;
-  width: 30vw;
-  text-align: center;
-}
+  &-text {
+    margin: 0;
+    text-align: center;
+  }
 
-.fa-arrow-down:before {
-  font-size: 2.4rem;
+  .fa-arrow-down:before {
+    font-size: 2.4rem;
+  }
 }
 
 .section-black {
