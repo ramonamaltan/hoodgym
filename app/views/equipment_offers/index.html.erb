@@ -1,12 +1,15 @@
 <div class="container-training">
   <h1><%= @station.name %></h1>
 
-  <p><%= @myrentals.count %> Item in Ausleihe</p>
-  <div class="current-rent">
-      <% @myrentals.each do |rental| %>
+  
+    <% if @myrentals.last.equipment_offer.station == @station %>
+      <p><%= @myrentals.count %> item rented</p>
+      <div class="current-rent">
+        <% @myrentals.each do |rental| %>
           <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
           <% mm, ss = t.divmod(60) %>
           <% hh, mm = mm.divmod(60) %>
+          <% total = 0 %>
           <% if hh.between?(1, 10) %>
             <p><%= rental.equipment_offer.name %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </p>
           <% elsif mm.between?(1, 10) %>
@@ -17,7 +20,12 @@
             <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
           <% end %>
         <% end %>
-  </div>
+      </div>
+      <% else %>
+        <p>0 items rented</p>
+        <p>Total: 00:00:00</p>
+    <% end %>
+  
 
   <% @equipment_offers.each do |item| %>
     <div class="equipment-overview">
