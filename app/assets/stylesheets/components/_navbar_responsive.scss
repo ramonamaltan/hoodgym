@@ -22,7 +22,7 @@
         height: 3px;
         left: 0;
         right: 0;
-        top: 2rem;
+        top: 2.5rem;
         background: $hg-indigo;
         opacity: 0;
         transition: opacity 300ms ease-in-out;
@@ -45,6 +45,7 @@ nav button {
 nav .mainMenu {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 nav .mainMenu .closeMenu , .openMenu, .icons i {
@@ -58,7 +59,7 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
     a {
       margin: 0;
       font-size: 1.2rem;
-      padding: 4px;
+      padding: 8px;
       display: inline-block;
     }
   }
@@ -67,7 +68,7 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
   }
 
   nav .mainMenu {
-      height: 60vh;
+      height: 100vh;
       position: fixed;
       top: 0;
       right: 0;
@@ -92,14 +93,3 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
       display: block;
   }
 }
-
-
-
-
-/* Add a black background color to the top navigation
- .topnav {
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  background: $hg-background;
-} */
