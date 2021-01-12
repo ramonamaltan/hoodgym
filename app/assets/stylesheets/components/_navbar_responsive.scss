@@ -63,11 +63,15 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
       display: inline-block;
     }
   }
-  nav button {
-    margin: 0;
-  }
+  
+  nav {
+  padding: 16px;
 
-  nav .mainMenu {
+    button {
+      margin: 0;
+    }
+
+    .mainMenu {
       height: 100vh;
       position: fixed;
       top: 0;
@@ -80,16 +84,18 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
       background: $hg-background;
       transition: top 300ms ease;
       display: none;
-  }
+    }
 
-  nav .mainMenu .closeMenu {
-    display: block;
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-  }
-
-  nav .openMenu {
+    .mainMenu .closeMenu {
       display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .openMenu {
+        display: block;
+    }
   }
+  
 }
