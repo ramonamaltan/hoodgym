@@ -1,10 +1,14 @@
 <div class="container-training">
   <h1><%= @station.name %></h1>
 
-  <p><%= @myrentals.count %> Item in Ausleihe</p>
-  <div class="current-rent">
-      <% @myrentals.each do |rental| %>
+  <%# Rent time overview on top of page %>
+    <% if @myrentals.last.equipment_offer.station == @station %>
+      <p><%= @myrentals.count %> item rented</p>
+      <div class="current-rent">
+        <% total = 0 %>
+        <% @myrentals.each do |rental| %>
           <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
+          <% total += t %>
           <% mm, ss = t.divmod(60) %>
           <% hh, mm = mm.divmod(60) %>
           <% if hh.between?(1, 10) %>
@@ -17,7 +21,23 @@
             <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
           <% end %>
         <% end %>
-  </div>
+        <% mm, ss = total.divmod(60) %>
+          <% hh, mm = mm.divmod(60) %>
+          <% if hh.between?(1, 10) %>
+            <p><%= "Gesamt" %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </p>
+          <% elsif mm.between?(1, 10) %>
+            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </p>
+          <% elsif ss.between?(1, 10) %>
+            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </p>
+          <% else %>
+            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
+          <% end %>
+      </div>
+      <% else %>
+        <p>0 items rented</p>
+        <p>Total: 00:00:00</p>
+    <% end %>
+  
 
   <% @equipment_offers.each do |item| %>
     <div class="equipment-overview">
@@ -32,7 +52,7 @@
             <h5>Pick up</h5>
             <h5><%= item.name %></h5>
             <h5>to start rent</h5>
-            <button class="btn-ghost">Cancel rent</button>
+            <button class="btn-ghost my-3">Cancel rent</button>
           </div>
         </div>
 

@@ -9,7 +9,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: auto;
+  overflow: hidden;
   margin: auto;
   text-align: center;
 }
@@ -26,6 +26,7 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
