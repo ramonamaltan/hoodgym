@@ -1,7 +1,7 @@
 <div class="container-training">
   <h1><%= @station.name %></h1>
 
-  
+  <%# Rent time overview on top of page %>
     <% if @myrentals.last.equipment_offer.station == @station %>
       <p><%= @myrentals.count %> item rented</p>
       <div class="current-rent">
@@ -52,7 +52,7 @@
             <h5>Pick up</h5>
             <h5><%= item.name %></h5>
             <h5>to start rent</h5>
-            <button class="btn-ghost">Cancel rent</button>
+            <button class="btn-ghost my-3">Cancel rent</button>
           </div>
         </div>
 
