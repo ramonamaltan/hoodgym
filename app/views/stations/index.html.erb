@@ -7,14 +7,13 @@
 
   <div class="index-container">
     <div id="section-stations-container"> 
-      <div class="stations-cards p-3">
+      <div class="stations-cards">
           <% @stations.each do |station| %>
-          <div class="card-station py-2">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-station">
             <div class="card-station-infos">
               <h2><%= station.name %></h2>
             </div>
-            <%= link_to 'Explore', station_path(station), class: 'btn-red mx-3' %>
+            <%= link_to 'Explore', station_path(station), class: 'btn-red ml-3' %>
           </div>
           <% end %>
       </div>

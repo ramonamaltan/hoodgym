@@ -9,6 +9,11 @@
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin: 12px;
+  background: $hg-background;
+  border-radius: 8px;
 
   img {
     height: 80%;
