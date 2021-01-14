@@ -1,31 +1,38 @@
 .stations-cards {
   display: block;
+  overflow: scroll;
+  max-height: 200px;
 }
 
 .card-station {
-  overflow: hidden;
+  overflow: auto;
   color: white;
   display: flex;
   align-items: center;
-}
+  justify-content: space-between;
+  padding: 12px;
+  margin: 12px;
+  background: $hg-background;
+  border-radius: 8px;
 
-.card-station img {
-  height: 80%;
-  width: 80px;
-  object-fit: cover;
-  margin-right: 16px;
-}
+  img {
+    height: 80%;
+    width: 80px;
+    object-fit: cover;
+    margin-right: 16px;
+  }
 
-.card-station h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-}
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+  }
 
-.card-station p {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 2%;
+  p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 2%;
+  }
 }
