@@ -1,9 +1,28 @@
+require 'open-uri'
+require 'nokogiri'
+
 puts 'Delete existing entries'
 User.destroy_all
 Rental.destroy_all
 EquipmentOffer.destroy_all
 Station.destroy_all
 
+# Webscraping for stations
+html_content = open('https://calisthenics-parks.com/cities/16-de-berlin').read
+doc = Nokogiri::HTML(html_content)
+
+nodeset = doc.css(".media-heading a")
+links = nodeset.map {|element| element["href"] }.compact
+nodeset.each do |station|
+  p station.children.to_s
+  link = station["href"]
+  station_url = open(link).read
+  station_doc = Nokogiri::HTML(station_url)
+  address = station_doc.search('address').text.strip
+  p location = address.gsub("Adresse\n                                    ", "").gsub(", Deutschland", "")
+end
+
+# Rest of seeds
 puts 'Start seeding users'
 ramona = User.create(password: '123456', email: 'ramona@gmail.com', location: 'Koloniestr. 21, 13359 Berlin', first_name: 'ramona', time_account: 50)
 andi = User.create(password: '123456', email: 'andi@gmail.com', location: 'Luxemburger Str. 10, 13353 Berlin', first_name: 'andreas', time_account: 100)
