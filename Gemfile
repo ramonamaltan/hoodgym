@@ -32,6 +32,7 @@ gem 'devise'
 gem 'pundit'
 
 gem 'geocoder'
+gem 'nokogiri'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
