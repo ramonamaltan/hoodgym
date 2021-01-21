@@ -45,6 +45,8 @@ dumbbell5_beuth = EquipmentOffer.create(name: '5kg Dumbbell', station_id: beuth_
 puts 'Start seeding rentals'
 rental1 = Rental.create(begin_at: '2020-12-23 09:10:03', user_id: ramona.id, equipment_offer_id: dumbbell15_freeletics2.id)
 rental2 = Rental.create(begin_at: '2020-12-23 09:20:03', user_id: ramona.id, equipment_offer_id: dumbbell15_freeletics1.id)
+rental3 = Rental.create(begin_at: '2020-12-23 09:10:03', end_at: '2020-12-23 09:40:03', user_id: ramona.id, equipment_offer_id: dumbbell15_beuth.id)
+rental4 = Rental.create(begin_at: '2020-12-23 09:20:03', end_at: '2020-12-23 10:10:03', user_id: ramona.id, equipment_offer_id: dumbbell5_beuth.id)
 
 
 puts "Finished Seeding: #{User.count} users, #{Rental.count} rentals, #{EquipmentOffer.count} equipment offers and #{Station.count} stations"
