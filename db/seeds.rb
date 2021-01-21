@@ -8,24 +8,11 @@ EquipmentOffer.destroy_all
 Station.destroy_all
 
 # Webscraping for stations
-puts 'Start scraping'
-
-html_content = open('https://calisthenics-parks.com/cities/16-en-berlin').read
-doc = Nokogiri::HTML(html_content)
-
-nodeset = doc.css(".media-heading a")
-links = nodeset.map {|element| element["href"] }.compact
-nodeset.each do |station|
-  name = station.children.to_s.gsub("- Berlin ", "").gsub("Berlin - ", "").gsub('Calisthenics Stations - ', '').gsub('Ninja Warrior Gym - ', '')
-  link = station["href"]
-  station_url = open(link).read
-  station_doc = Nokogiri::HTML(station_url)
-  address = station_doc.search('address').text.strip
-  location = location = address.gsub("Address\n                                    ", "").gsub(", Germany", "")
-  Station.create(name: name, location: location)
-end
-
-puts "finished scraping & created #{Station.count} stations"
+# 'puts scraper'
+# scrape = Scraper.new
+# stations = scrape.scrape_stations
+# Station.create_from_collection(stations)
+# 'end'
 
 # Rest of seeds
 puts 'Start seeding users'
