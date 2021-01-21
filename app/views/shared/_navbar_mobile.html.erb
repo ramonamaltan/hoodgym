@@ -10,7 +10,14 @@
       <li><a href="#">Pricing</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="#">About</a></li>
-      <button class="btn-ghost my-4">Login</button>
+
+      <%# Logic Login/ Logout Button Display %>
+      <% if user_signed_in? %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "my-4" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "btn-ghost my-4" %>
+      <% end %>
+
       <div class="closeMenu"><i class="fa fa-times"></i></div>
     </ul>
 
