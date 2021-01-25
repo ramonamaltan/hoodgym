@@ -1,14 +1,15 @@
 <div class="page-container">
-  <div class="booking-container m-3">
-    <h1 class="mb-4">Bookings</h1>
+  <h1 class="mb-4 text-center">Bookings</h1>
+  <div class="booking-container">
     <% @bookings.each do |booking| %>
-      <div class="booking-card my-3">
+      <div class="booking-card m-2">
         <%= image_tag('home2_m_comp.jpg', alt: 'Man doing wallballs') %>
         <div class="booking-infos">
           <div>
             <h2><%= booking.equipment_offer.station.name %></h2>
             <p>Equipment: <%= booking.equipment_offer.name %></p> 
-            <p>Rented: <%= booking.begin_at.strftime("%d.%m.%Y at %I:%M%p") %>
+            <p>Date: <%= booking.begin_at.strftime("%d.%m.%Y") %></p>
+            <p>Time: <%= booking.begin_at.strftime("%I:%M%p") %>
               <%= booking.end_at.strftime("to %I:%M%p") if !booking.end_at.nil? %></p>
           </div>
           <h2 class="booking-pricing">€9.99</h2>
