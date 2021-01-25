@@ -80,16 +80,18 @@
 
 .btn-underlined {
   color: white;
-  padding: 6px 12px;
+  padding: 6px;
   background: transparent;
   border: none;
+  font-weight: lighter;
   display: inline-block;
   text-decoration: underline;
+  font-weight: lighter;
 }
 
 .btn-underlined:hover {
-  background-color: $hg-overlay;
-  color:white;
+  color:grey;
+  text-decoration: underline;
 }
 
 .btn-sticky {
