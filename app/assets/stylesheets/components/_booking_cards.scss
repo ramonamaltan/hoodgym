@@ -1,4 +1,6 @@
 .booking-container {
+  margin-right: 12px;
+  margin-left: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -9,6 +11,7 @@
   overflow: hidden;
   background: $hg-overlay;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
 
   img {
     height: 200px;
@@ -32,5 +35,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+
+@media (max-width: 659px) {
+  .booking-container {
+    margin-top: 24px;
+  }
+  .booking-hl {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 660px) {
+  .booking-container {
+    margin-top: 42px;
+  }
+  .booking-hl {
+    margin-top: 48px;
   }
 }
