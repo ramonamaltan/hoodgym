@@ -1,3 +1,10 @@
-<% @bookings.each do |booking| %>
-  <%= booking.user.email %>
-<% end %>
+<div class="bookings-container m-5">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card">
+        Rented: <%= booking.begin_at.strftime("%d.%m.%Y at %I:%M%p") %>
+        <%= booking.end_at.strftime("to %I:%M%p") if !booking.end_at.nil? %>
+        Equipment: <%= booking.equipment_offer.name %>
+        Station: <%= booking.equipment_offer.station.name %>
+      </div>
+    <% end %>
+</div>
