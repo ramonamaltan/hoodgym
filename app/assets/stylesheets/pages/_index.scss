@@ -27,9 +27,17 @@ html {
   padding-bottom: 6rem;
 }
 
- h1 {
+h1 {
   font-family: "Arvo", "Helvetica", "sans-serif";
   font-size: 2rem;
+}
+
+h2, h3, h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 0.9rem;
 }
 
 .flex {
