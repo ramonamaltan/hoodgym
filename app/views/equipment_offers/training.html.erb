@@ -1,9 +1,9 @@
 <div class="container-training">
-  <h1><%= @station.name %></h1>
+  <h1 class="my-4"><%= @station.name %></h1>
 
   <%# Rent time overview on top of page %>
     <% if @myrentals.count.positive? && @myrentals.last.equipment_offer.station == @station %>
-      <p><%= @myrentals.count %> item rented</p>
+      <h6><%= @myrentals.count %> item rented</h6>
       <div class="current-rent">
         <% total = 0 %>
         <% @myrentals.each do |rental| %>
@@ -12,30 +12,30 @@
           <% mm, ss = t.divmod(60) %>
           <% hh, mm = mm.divmod(60) %>
           <% if hh.between?(1, 10) %>
-            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </p>
+            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
           <% elsif mm.between?(1, 10) %>
-            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </p>
+            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
           <% elsif ss.between?(1, 10) %>
-            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </p>
+            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
           <% else %>
-            <p><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
+            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
           <% end %>
         <% end %>
         <% mm, ss = total.divmod(60) %>
           <% hh, mm = mm.divmod(60) %>
           <% if hh.between?(1, 10) %>
-            <p><%= "Gesamt" %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </p>
+            <h6><%= "Gesamt" %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
           <% elsif mm.between?(1, 10) %>
-            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </p>
+            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
           <% elsif ss.between?(1, 10) %>
-            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </p>
+            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
           <% else %>
-            <p><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </p>
+            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
           <% end %>
       </div>
     <% else %>
-      <p>0 items rented</p>
-      <p>Total: 00:00:00</p>
+      <h6>0 items rented</h6>
+      <h6>Total: 00:00:00</h6>
     <% end %>
   
 
