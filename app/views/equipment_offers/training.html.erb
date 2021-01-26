@@ -1,80 +1,82 @@
-<div class="container-training">
-  <h1 class="my-4"><%= @station.name %></h1>
+<div class="page-container">
+  <div class="container-training">
+    <h1 class="mb-4"><%= @station.name %></h1>
 
-  <%# Rent time overview on top of page %>
-    <% if @myrentals.count.positive? && @myrentals.last.equipment_offer.station == @station %>
-      <h6><%= @myrentals.count %> item rented</h6>
-      <div class="current-rent">
-        <% total = 0 %>
-        <% @myrentals.each do |rental| %>
-          <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
-          <% total += t %>
-          <% mm, ss = t.divmod(60) %>
-          <% hh, mm = mm.divmod(60) %>
-          <% if hh.between?(1, 10) %>
-            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
-          <% elsif mm.between?(1, 10) %>
-            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
-          <% elsif ss.between?(1, 10) %>
-            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
-          <% else %>
-            <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
+    <%# Rent time overview on top of page %>
+      <% if @myrentals.count.positive? && @myrentals.last.equipment_offer.station == @station %>
+        <h6><%= @myrentals.count %> item rented</h6>
+        <div class="current-rent">
+          <% total = 0 %>
+          <% @myrentals.each do |rental| %>
+            <% t = (DateTime.now().utc - rental.begin_at).round.abs %>
+            <% total += t %>
+            <% mm, ss = t.divmod(60) %>
+            <% hh, mm = mm.divmod(60) %>
+            <% if hh.between?(1, 10) %>
+              <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
+            <% elsif mm.between?(1, 10) %>
+              <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
+            <% elsif ss.between?(1, 10) %>
+              <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
+            <% else %>
+              <h6><%= rental.equipment_offer.name %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
+            <% end %>
           <% end %>
-        <% end %>
-        <% mm, ss = total.divmod(60) %>
-          <% hh, mm = mm.divmod(60) %>
-          <% if hh.between?(1, 10) %>
-            <h6><%= "Gesamt" %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
-          <% elsif mm.between?(1, 10) %>
-            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
-          <% elsif ss.between?(1, 10) %>
-            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
-          <% else %>
-            <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
-          <% end %>
-      </div>
-    <% else %>
-      <h6>0 items rented</h6>
-      <h6>Total: 00:00:00</h6>
-    <% end %>
-  
-
-  <% @equipment_offers.each do |item| %>
-    <div class="equipment-overview">
-      <h5 id="item-rented"><%= item.name %></h5>
-      <% if item.availability == true %>
-        <button id="button-rented" class="btn-green">Rent now</button>
-        <!-- Rented by you button click -->
-        <div id="modal-rented" class="modal">
-          <!-- Modal content -->
-          <span class="modal-rented-close px-3">&times;</span>
-          <div class="modal-rented-content">
-            <h5>Pick up</h5>
-            <h5><%= item.name %></h5>
-            <h5>to start rent</h5>
-            <button class="btn-ghost my-3 cancel">Cancel rent</button>
-          </div>
+          <% mm, ss = total.divmod(60) %>
+            <% hh, mm = mm.divmod(60) %>
+            <% if hh.between?(1, 10) %>
+              <h6><%= "Gesamt" %>:&nbsp;<%= "0#{hh}:#{mm}:#{ss}" %> </h6>
+            <% elsif mm.between?(1, 10) %>
+              <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:0#{mm}:#{ss}" %> </h6>
+            <% elsif ss.between?(1, 10) %>
+              <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:0#{ss}" %> </h6>
+            <% else %>
+              <h6><%= "Gesamt" %>:&nbsp;<%= "#{hh}:#{mm}:#{ss}" %> </h6>
+            <% end %>
         </div>
-
-      <%# To check if item 'rented by you' look for last rental time is current time AND rental user is current user %>
-      <% elsif item.rentals.last.begin_at < DateTime.now().utc && item.rentals.last.end_at.nil? && item.rentals.last.user == @current_user %>
-        <button id="button-rented" class="btn-yellow">rented by you</button>
-        <!-- Rented by you button click -->
-        <div id="modal-rented" class="modal">
-          <!-- Modal content -->
-          <span class="modal-rented-close px-3">&times;</span>
-          <div class="modal-rented-content">
-            <h5><%= item.name %></h5>
-            <h5>Rented since</h5>
-            <h5><%= item.rentals.last.begin_at.localtime.strftime('%I:%M%P') %></h5>
-          </div>
-          <span ><p>Return item and close lock to end rent.</p></span>
-        </div>
-
       <% else %>
-      <%# To check if item 'in use' look for last rental time is time now --> rentals = rentals.last.end_at %>
-        <button class="btn-darkred">In use</button>
+        <h6>0 items rented</h6>
+        <h6>Total: 00:00:00</h6>
       <% end %>
-    </div>
-  <% end %>
+    
+
+    <% @equipment_offers.each do |item| %>
+      <div class="equipment-overview">
+        <h5 id="item-rented"><%= item.name %></h5>
+        <% if item.availability == true %>
+          <button id="button-rented" class="btn-green">Rent now</button>
+          <!-- Rented by you button click -->
+          <div id="modal-rented" class="modal">
+            <!-- Modal content -->
+            <span class="modal-rented-close px-3">&times;</span>
+            <div class="modal-rented-content">
+              <h5>Pick up</h5>
+              <h5><%= item.name %></h5>
+              <h5>to start rent</h5>
+              <button class="btn-ghost my-3 cancel">Cancel rent</button>
+            </div>
+          </div>
+
+        <%# To check if item 'rented by you' look for last rental time is current time AND rental user is current user %>
+        <% elsif item.rentals.last.begin_at < DateTime.now().utc && item.rentals.last.end_at.nil? && item.rentals.last.user == @current_user %>
+          <button id="button-rented" class="btn-yellow">rented by you</button>
+          <!-- Rented by you button click -->
+          <div id="modal-rented" class="modal">
+            <!-- Modal content -->
+            <span class="modal-rented-close px-3">&times;</span>
+            <div class="modal-rented-content">
+              <h5><%= item.name %></h5>
+              <h5>Rented since</h5>
+              <h5><%= item.rentals.last.begin_at.localtime.strftime('%I:%M%P') %></h5>
+            </div>
+            <span ><p>Return item and close lock to end rent.</p></span>
+          </div>
+
+        <% else %>
+        <%# To check if item 'in use' look for last rental time is time now --> rentals = rentals.last.end_at %>
+          <button class="btn-darkred">In use</button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

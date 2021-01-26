@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+}
+
 .banner {
   height: 87vh;
   width: 100vw;

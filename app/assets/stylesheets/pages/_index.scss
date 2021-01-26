@@ -4,6 +4,7 @@
 @import "stations_show";
 @import "equipment_offers_index";
 @import "login";
+@import "booking";
 
 body {
   color: white;
@@ -73,4 +74,18 @@ p {
 
 a, a:visited, a:hover {
   text-decoration: none;
+}
+
+@media (max-width: 659px) {
+  .page-container {
+    margin-top: 1.5rem;
+  }
+
+}
+
+@media (min-width: 660px) {
+  .page-container {
+    margin-top: 2.5rem;
+  }
+
 }
