@@ -32,6 +32,7 @@
 
 .directions-flex {
   display: flex;
+  align-items: center;
 }
 
 .directions-flex img {
@@ -49,7 +50,8 @@
   margin-bottom: 16px;
 }
 
-.flex-spacearound img {
-  width: 45vw;
+.images img {
+  width: 300px;
   object-fit: cover;
+  margin-bottom: 12px;
 }

@@ -28,6 +28,20 @@ html {
   padding-bottom: 6rem;
 }
 
+@media (max-width: 659px) {
+  .page-container {
+    margin-top: 1.5rem;
+  }
+
+}
+
+@media (min-width: 660px) {
+  .page-container {
+    margin-top: 2.5rem;
+  }
+
+}
+
 h1 {
   font-family: "Arvo", "Helvetica", "sans-serif";
   font-size: 2rem;
@@ -44,6 +58,7 @@ p {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
 
   &-jc-sb {
     justify-content: space-between;
@@ -58,16 +73,6 @@ p {
   }
 }
 
-.flex-spacearound {
-  display: flex;
-  justify-content: space-around;
-}
-
-.flex-spacebetween {
-  display: flex;
-  justify-content: space-between;
-}
-
 .block {
   display: block;
 }
@@ -76,16 +81,3 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 659px) {
-  .page-container {
-    margin-top: 1.5rem;
-  }
-
-}
-
-@media (min-width: 660px) {
-  .page-container {
-    margin-top: 2.5rem;
-  }
-
-}
