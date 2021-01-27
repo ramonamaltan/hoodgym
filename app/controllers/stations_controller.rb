@@ -15,13 +15,5 @@ class StationsController < ApplicationController
   def show
     @station = Station.find(params[:id])
     authorize @station
-
-    @stations = Station.all
-    @markers = @stations.geocoded.map do |station|
-      {
-        lat: station.latitude,
-        lng: station.longitude
-      }
-    end
   end
 end
