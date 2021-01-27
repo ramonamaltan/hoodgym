@@ -23,6 +23,10 @@
     margin-left: 2%;
     margin-right: 2%;
   }
+
+  .stations-cards {
+    max-height: 200px;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1199px) {
@@ -31,6 +35,10 @@
     margin-left: 10%;
     margin-right: 10%;
   }
+
+  .stations-cards {
+    max-height: 200px;
+  }
 }
 
 
@@ -38,5 +46,10 @@
   #section-stations-container {
     float: left;
     margin: 24px;
+  }
+
+  .stations-cards {
+    max-height: 90vh;
+    max-width: 500px;
   }
 }
