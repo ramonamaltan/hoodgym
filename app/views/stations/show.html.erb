@@ -18,7 +18,7 @@
         <%= image_tag('monbijou.png', alt: '') %>
         <div class="directions-block">
           <div class="directions-address"><%= @station.location%></div>
-          <a href="https://goo.gl/maps/CaBoopSyDZB6ekSZ7" class="btn-red">Route</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>"  class="btn-red">Route</a>
         </div>
       </div>
     </div>

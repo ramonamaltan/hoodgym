@@ -6,7 +6,7 @@ const buildMap = (mapElement) => {
     container: 'map',
     style: 'mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb',
     center: [52.47550207392972, 13.402032473101206], // starting position
-    zoom: 9 // starting zoom
+    zoom: 22 // starting zoom
   });
 };
 
