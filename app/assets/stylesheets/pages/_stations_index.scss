@@ -14,41 +14,42 @@
   z-index: 1;
   background-color: rgba(0,0,0,0.88);
   flex-grow: 1;
-  border-radius: 4px;
 }
 
 @media (max-width: 600px) {
   #section-stations-container {
-    top: 60vh;
+    top: 53vh;
     margin-left: 2%;
     margin-right: 2%;
+    border-radius: 4px;
   }
 
   .stations-cards {
-    max-height: 200px;
+    max-height: 280px;
   }
 }
 
 @media (min-width: 601px) and (max-width: 1199px) {
   #section-stations-container {
-    top: 60vh;
+    top: 53vh;
     margin-left: 10%;
     margin-right: 10%;
+    border-radius: 4px;
   }
 
   .stations-cards {
-    max-height: 200px;
+    max-height: 280px;
   }
 }
 
 @media (min-width: 1200px) {
   #section-stations-container {
     float: left;
-    margin: 24px;
+    margin: 0 auto;
   }
 
   .stations-cards {
-    max-height: 85vh;
-    max-width: 500px;
+    max-height: 90vh;
+    max-width: 450px;
   }
 }
