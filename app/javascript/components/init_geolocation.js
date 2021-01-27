@@ -8,7 +8,6 @@ const initGeoLocation = () => {
   const success = (pos) => {
     const coordinates = pos.coords;
   
-    console.log('Your current position is:');
     console.log(`Latitude : ${coordinates.latitude}`);
     console.log(`Longitude: ${coordinates.longitude}`);
     console.log(`Accuracy: ${coordinates.accuracy}`);
@@ -18,7 +17,10 @@ const initGeoLocation = () => {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
   
-  navigator.geolocation.getCurrentPosition(success, error, options);
+  const geolocator = document.getElementById('geolocator');
+  geolocator.addEventListener('click', () => {
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  })
   
 }
 

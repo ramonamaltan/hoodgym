@@ -15,10 +15,11 @@
       </div>
 
       <div class="directions-flex">
-        <%= image_tag('monbijou.png', alt: '') %>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Berlin&zoom=11&maptype=roadmap&markers=color:red%7Clabel:S%7C<%=@station.latitude%>,<%=@station.longitude%>&key=AIzaSyB5v-Zc6fjY7NseJRlJ0yfALTeNwd1eATc" alt="Station on map">
         <div class="directions-block">
           <div class="directions-address"><%= @station.location%></div>
           <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>" target="_blank" class="btn-red">Route</a>
+          <button id="geolocator" class="btn btn-red">Get Geolocation</button>
         </div>
       </div>
     </div>
