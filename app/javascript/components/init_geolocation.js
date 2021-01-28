@@ -18,9 +18,11 @@ const initGeoLocation = () => {
   }
   
   const geolocator = document.getElementById('geolocator');
-  geolocator.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(success, error, options);
-  })
+  if (geolocator) {
+    geolocator.addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    })
+  }
   
 }
 
