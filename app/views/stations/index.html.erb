@@ -1,5 +1,5 @@
 <div class="station-cards-center">
-  <div class="stations-searchbar" style="z-index:1;">
+  <div class="stations-searchbar" id="address_search">
     <%= form_tag stations_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
