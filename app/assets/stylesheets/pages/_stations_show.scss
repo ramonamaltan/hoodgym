@@ -1,7 +1,6 @@
 .padding-outside {
-  padding: 0 12px;
+  padding: 0 24px;
   background: $hg-background;
-  min-height: 80vh;
 }
 
 .station-banner {
@@ -18,7 +17,8 @@
 }
 
 .container-text {
-  padding: 32px 24px 32px 24px;
+  max-width: 50%;
+  padding: 32px 24px 32px 0;
 }
 
 .item-list {
