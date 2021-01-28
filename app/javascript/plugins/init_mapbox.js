@@ -43,15 +43,19 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     
     map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
   }
 
   const showMapElement = document.getElementById('map-show');
   if (showMapElement) {
     mapboxgl.accessToken = showMapElement.dataset.mapboxApiKey;
-    var map = new mapboxgl.Map({
+    const map = new mapboxgl.Map({
     container: 'map-show',
     style: 'mapbox://styles/mapbox/streets-v11',
     });
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
+
     const marker = JSON.parse(showMapElement.dataset.marker);
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])

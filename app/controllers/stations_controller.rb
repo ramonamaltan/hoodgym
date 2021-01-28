@@ -1,6 +1,6 @@
 class StationsController < ApplicationController
   def index
-    @stations = policy_scope(Station).order(created_at: :desc)
+    @stations = policy_scope(Station).order(:name)
 
     @markers = @stations.geocoded.map do |station|
       {
