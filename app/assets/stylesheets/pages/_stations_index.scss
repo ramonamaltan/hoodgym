@@ -9,6 +9,10 @@
   width: 90%;
   flex-grow: 1;
   margin-left: 12px;
+
+  form {
+    display: flex;
+  }
 }
 
 #map {

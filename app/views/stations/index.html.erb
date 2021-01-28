@@ -1,12 +1,9 @@
 <div class="station-cards-center">
   <div class="stations-searchbar">
     <%= form_tag stations_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Enter your address to find stations near you"
-      %>
-      <%= submit_tag "Search", class: "btn-red mt-1" %>
+      <%= text_field_tag :query, params[:query],
+        class: "form-control", placeholder: "Enter address to find stations nearby"%>
+      <%= submit_tag "Search", class: "btn-ghost" %>
     <% end %>
   </div>
 
