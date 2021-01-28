@@ -1,6 +1,10 @@
 class StationsController < ApplicationController
   def index
-    @stations = policy_scope(Station).order(:name)
+    if params[:query].present?
+      @stations = policy_scope(Station).near("%#{params[:query]}%", 3)
+    else
+      @stations = policy_scope(Station).order(:name)
+    end
 
     @markers = @stations.geocoded.map do |station|
       {

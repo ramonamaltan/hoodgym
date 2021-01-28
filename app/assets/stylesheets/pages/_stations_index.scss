@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+.stations-searchbar {
+  z-index: 1;
+  position: relative;
+  width: 90%;
+  flex-grow: 1;
+  margin-left: 12px;
+}
+
 #map {
   position: absolute;
   bottom:0;

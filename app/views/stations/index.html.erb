@@ -1,4 +1,15 @@
 <div class="station-cards-center">
+  <div class="stations-searchbar" style="z-index:1;">
+    <%= form_tag stations_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Enter your address to find stations near you"
+      %>
+      <%= submit_tag "Search", class: "btn-red mt-1" %>
+    <% end %>
+  </div>
+
   <div id="map"
       style="width: 100%; height: 90%; top: 66px;"
       data-markers="<%= @markers.to_json %>"
