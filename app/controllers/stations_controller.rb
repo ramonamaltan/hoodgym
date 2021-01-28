@@ -15,5 +15,7 @@ class StationsController < ApplicationController
   def show
     @station = Station.find(params[:id])
     authorize @station
+
+    @marker = { lat: @station.latitude, lng: @station.longitude, image_url: helpers.asset_url('training-emoji2.jpg') }
   end
 end

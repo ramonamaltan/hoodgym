@@ -41,7 +41,21 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    
     map.addControl(new mapboxgl.NavigationControl());
+  }
+
+  const showMapElement = document.getElementById('map-show');
+  if (showMapElement) {
+    mapboxgl.accessToken = showMapElement.dataset.mapboxApiKey;
+    var map = new mapboxgl.Map({
+    container: 'map-show',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    });
+    const marker = JSON.parse(showMapElement.dataset.marker);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(map);
   }
 };
 

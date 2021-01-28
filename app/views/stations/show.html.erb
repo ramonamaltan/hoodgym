@@ -15,7 +15,9 @@
       </div>
 
       <div class="directions-flex">
-        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Berlin&zoom=11&maptype=roadmap&markers=color:red%7Clabel:S%7C<%=@station.latitude%>,<%=@station.longitude%>&key=AIzaSyB5v-Zc6fjY7NseJRlJ0yfALTeNwd1eATc" alt="Station on map">
+          
+      <div id="map-show" style="position: absolute; top: 0; bottom: 0; width: 100%;" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  
         <div class="directions-block">
           <div class="directions-address"><%= @station.location%></div>
           <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>" target="_blank" class="btn-red">Route</a>
