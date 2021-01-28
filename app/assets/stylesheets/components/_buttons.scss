@@ -78,6 +78,24 @@
   color:white;
 }
 
+.btn-dark {
+  color: white;
+  border: 1px solid white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: lighter;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  background: $hg-background;
+  opacity: 0.8;
+  display: inline-block;
+}
+
+.btn-dark:hover {
+  background-color: $hg-overlay;
+  color:white;
+}
+
 .btn-underlined {
   color: white;
   padding: 6px;

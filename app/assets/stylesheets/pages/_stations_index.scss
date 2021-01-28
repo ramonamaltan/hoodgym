@@ -6,10 +6,7 @@
 .stations-searchbar {
   z-index: 1;
   position: relative;
-  width: 90%;
   flex-grow: 1;
-  margin-left: 12px;
-  top: 4vh;
 
   form {
     display: flex;
@@ -25,11 +22,16 @@
 #section-stations-container {
   position: relative;
   z-index: 1;
-  background-color: rgba(0,0,0,0.88);
+  background-color: rgba(0,0,0,0.6);
   flex-grow: 1;
 }
 
 @media (max-width: 600px) {
+  .stations-searchbar {
+    width: 85%;
+    margin-left: 4px;
+  }
+
   #section-stations-container {
     top: 53vh;
     margin-left: 2%;
@@ -43,6 +45,12 @@
 }
 
 @media (min-width: 601px) and (max-width: 1199px) {
+  .stations-searchbar {
+    width: 80%;
+    margin: 0 auto;
+    top: 4vh;
+  }
+
   #section-stations-container {
     top: 53vh;
     margin-left: 10%;
@@ -56,13 +64,20 @@
 }
 
 @media (min-width: 1200px) {
+  .stations-searchbar {
+    width: 50%;
+    float: right;
+    top: 2vh;
+    right: 16vh;
+  }
+
   #section-stations-container {
     float: left;
     margin: 0 auto;
   }
 
   .stations-cards {
-    max-height: 90vh;
+    max-height: 100vh;
     max-width: 450px;
   }
 }
