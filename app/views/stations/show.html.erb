@@ -1,11 +1,12 @@
 <div class="home-container">
-  <div class="padding-outside">
+  
     <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
       <div class="container-text station-banner-text">
         <h1><%= @station.name %></h1>
       </div>
     </div>
-
+    
+  <div class="padding-outside">
     <div class="container-text">
       <div class="item-list">
         <h2>Item List</h2>
@@ -15,23 +16,20 @@
       </div>
 
       <div class="directions-flex">
-          
-      <div id="map-show" style="position: absolute; top: 0; bottom: 0; width: 100%;" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  
         <div class="directions-block">
           <div class="directions-address"><%= @station.location%></div>
           <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>" target="_blank" class="btn-red">Route</a>
           <button id="geolocator" class="btn btn-red">Get Geolocation</button>
         </div>
       </div>
+      <%= link_to 'Back to all stations', stations_path, class: 'btn-red mx-3 mt-4' %>
     </div>
 
-    <div class="flex flex-jc-sa images">
-      <%= image_tag('station1.jpg', alt: '') %>
-      <%= image_tag('station1.jpg', alt: '') %>
-    </div>
-    <%= link_to 'Back to all stations', stations_path, class: 'btn-red mx-3 mt-4' %>
+    
+    <div id="map-show" style="position: absolute; top: 50vh; bottom: 0; right: 0; width: 50%; height: 40%;" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
+
+  
 
   <%= render 'shared/footer' %>
 </div>
