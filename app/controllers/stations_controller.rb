@@ -1,6 +1,10 @@
 class StationsController < ApplicationController
   def index
-    @stations = policy_scope(Station).order(created_at: :desc)
+    if params[:query].present?
+      @stations = policy_scope(Station).near("%#{params[:query]}%", 3)
+    else
+      @stations = policy_scope(Station).order(:name)
+    end
 
     @markers = @stations.geocoded.map do |station|
       {
@@ -15,12 +19,7 @@ class StationsController < ApplicationController
   def show
     @station = Station.find(params[:id])
     authorize @station
-    @stations = Station.all
-    @markers = @stations.geocoded.map do |station|
-      {
-        lat: station.latitude,
-        lng: station.longitude
-      }
-    end
+
+    @marker = { lat: @station.latitude, lng: @station.longitude, image_url: helpers.asset_url('training-emoji2.jpg') }
   end
 end

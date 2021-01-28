@@ -1,7 +1,6 @@
 .padding-outside {
-  padding: 0 12px;
+  padding: 0 24px;
   background: $hg-background;
-  min-height: 80vh;
 }
 
 .station-banner {
@@ -17,29 +16,58 @@
   line-height: 1.2;
 }
 
+#map-show {
+  position: absolute;
+  top: 50vh;
+  bottom: 0;
+  right: 0;
+  height: 30%;
+}
+
 .container-text {
-  padding: 32px 24px 32px 24px;
+  padding: 32px 24px 32px 0;
+}
+
+.directions-flex {
+  display: flex;
+  margin-left: 10%;
+}
+
+@media (max-width: 600px) {
+  .container-text {
+    position: absolute;
+    top: 80vh;
+    width: 100%;
+  }
+  #map-show {
+    width: 100%;
+  }
+  .directions-flex {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 601px) {
+  .container-text {
+    width: 50%;
+  }
+  #map-show {
+    width: 50%;
+  }
+  .directions-flex {
+    display: flex;
+  }
 }
 
 .item-list {
   margin-bottom: 32px;
+  margin-left: 10%;
 }
 
 .item-list ul {
   padding: 0;
   list-style: inside;
-}
-
-.directions-flex {
-  display: flex;
-  align-items: center;
-}
-
-.directions-flex img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-right: 24px;
 }
 
 .directions-block {
@@ -48,10 +76,4 @@
 
 .directions-address {
   margin-bottom: 16px;
-}
-
-.images img {
-  width: 300px;
-  object-fit: cover;
-  margin-bottom: 12px;
 }

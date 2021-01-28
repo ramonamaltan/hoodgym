@@ -1,22 +1,28 @@
-<div class="station-cards-center">
-  <div id="map"
-      style="width: 100%; height: 90%; top: 66px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="stations-searchbar">
+  <%= form_tag stations_path, method: :get do %>
+    <%= text_field_tag :query, params[:query],
+      class: "form-control", placeholder: "Enter address to find stations nearby"%>
+    <%= submit_tag "Search", class: "btn-dark" %>
+  <% end %>
+</div>
 
-  <div class="index-container">
-    <div id="section-stations-container"> 
-      <div class="stations-cards">
-          <% @stations.each do |station| %>
-          <div class="card-station">
-            <div class="card-station-infos">
-              <h2><%= station.name %></h2>
-            </div>
-            <%= link_to 'Explore', station_path(station), class: 'btn-red ml-3' %>
+<div id="map"
+    style="width: 100%; height: 100%; top: 56px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<div class="index-container">
+  <div id="section-stations-container"> 
+    <div class="stations-cards">
+        <% @stations.each do |station| %>
+        <div class="card-station">
+          <div class="card-station-infos">
+            <h2><%= station.name %></h2>
           </div>
-          <% end %>
-      </div>
+          <%= link_to 'Explore', station_path(station), class: 'btn-red ml-3' %>
+        </div>
+        <% end %>
     </div>
   </div>
 </div>

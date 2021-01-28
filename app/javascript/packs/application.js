@@ -27,12 +27,16 @@ import "bootstrap";
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initNavbarToggle } from '../components/init_navbar_toggle';
 import { initModalRented } from '../components/init_modal_rented';
+import { initGeoLocation } from '../components/init_geolocation';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initMapbox();
   initNavbarToggle();
   initModalRented();
+  initGeoLocation();
+  initAutocomplete();
 });

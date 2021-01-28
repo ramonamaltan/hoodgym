@@ -6,7 +6,7 @@ const buildMap = (mapElement) => {
     container: 'map',
     style: 'mapbox://styles/pdunleav/cjofefl7u3j3e2sp0ylex3cyb',
     center: [52.47550207392972, 13.402032473101206], // starting position
-    zoom: 9 // starting zoom
+    zoom: 22 // starting zoom
   });
 };
 
@@ -31,7 +31,7 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds);
+  map.fitBounds(bounds, { maxZoom: 12, duration: 0 });
 };
 
 const initMapbox = () => {
@@ -41,7 +41,29 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    
     map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
+  }
+
+  const showMapElement = document.getElementById('map-show');
+  if (showMapElement) {
+    mapboxgl.accessToken = showMapElement.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+    container: 'map-show',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl());
+
+    const marker = JSON.parse(showMapElement.dataset.marker);
+    new mapboxgl.Marker()
+      .setLngLat([ marker.lng, marker.lat ])
+      .addTo(map);
+
+    const bounds = new mapboxgl.LngLatBounds();
+    bounds.extend([ marker.lng, marker.lat ]);
+    map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0 });
   }
 };
 
