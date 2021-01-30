@@ -1,8 +1,9 @@
-<%= form_for(@station) do |f| %>
+<%= form_with model: @station do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :location %>
   <%= f.text_field :location %>
-
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
   <%= f.submit class: 'btn-red' %>
 <% end %>
