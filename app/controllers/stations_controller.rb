@@ -25,6 +25,7 @@ class StationsController < ApplicationController
 
   def new
     @station = Station.new
+    authorize @station
   end
 
   def create
