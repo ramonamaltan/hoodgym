@@ -34,6 +34,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'nokogiri'
 gem 'cloudinary'
+gem 'rails_admin'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
