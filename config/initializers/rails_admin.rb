@@ -46,4 +46,7 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  # to allow administartion of a subset of models
+  # config.included_models = [ "Station", "User" ]
 end
