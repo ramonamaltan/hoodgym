@@ -9,4 +9,7 @@ class StationPolicy < ApplicationPolicy
     return true
   end
   
+  def create?
+    user.admin?
+  end
 end

@@ -22,4 +22,25 @@ class StationsController < ApplicationController
 
     @marker = { lat: @station.latitude, lng: @station.longitude, image_url: helpers.asset_url('training-emoji2.jpg') }
   end
+
+  def new
+    @station = Station.new
+    authorize @station
+  end
+
+  def create
+    @station = Station.new(station_params)
+    authorize @station
+    if @station.save
+      redirect_to station_path(@station)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def station_params
+    params.require(:station).permit(:name, :location, :photo)
+  end
 end
