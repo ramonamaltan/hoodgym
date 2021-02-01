@@ -65,7 +65,7 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
   }
   
   nav {
-  padding: 16px;
+  padding: 9px;
 
     button {
       margin: 0;
@@ -84,6 +84,7 @@ nav .mainMenu .closeMenu , .openMenu, .icons i {
       background: $hg-background;
       transition: top 300ms ease;
       display: none;
+      z-index: 10;
     }
 
     .mainMenu .closeMenu {
