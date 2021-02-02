@@ -40,6 +40,7 @@ gem 'rails_admin'
 gem 'blazer'
 
 gem 'bullet', group: 'development'
+gem 'rack-mini-profiler'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
