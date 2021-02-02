@@ -63,4 +63,10 @@ Rails.application.configure do
 
   # image upload
   config.active_storage.service = :cloudinary
+
+  # Bullet gem (n+1 queries)
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.rails_logger = true
+  end
 end
