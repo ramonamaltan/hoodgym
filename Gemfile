@@ -39,6 +39,8 @@ gem 'cloudinary'
 gem 'rails_admin'
 gem 'blazer'
 
+gem 'bullet', group: 'development'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
