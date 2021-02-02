@@ -16,12 +16,9 @@
   <div id="section-stations-container"> 
     <div class="stations-cards">
         <% @stations.each do |station| %>
-        <div class="card-station">
-          <div class="card-station-infos">
-            <h2><%= station.name %></h2>
-          </div>
-          <%= link_to 'Explore', station_path(station), class: 'btn-red ml-3' %>
-        </div>
+          <% cache(station) do %>
+            <%= render station %>
+          <% end %>
         <% end %>
     </div>
   </div>
