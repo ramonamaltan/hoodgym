@@ -1,7 +1,9 @@
 one:
-  email: ramona@gmail.com
-  password: '123456'
+  email: ramonatest@gmail.com
+  encrypted_password: 123456
+  location: teststreet 100, Berlin 
 
 two:
-  email: andi@gmail.com
-  password: '123456' 
+  email: anditest@gmail.com
+  encrypted_password: 123456
+  location: teststreet 200, Berlin 

@@ -11,13 +11,13 @@ class StationTest < ActiveSupport::TestCase
 
   test "station is invalid without name" do
     @station.name = nil
-    assert_not @station.valid?
+    refute @station.valid?
     assert_not_nil @station.errors[:name]
   end
 
   test "station is invalid without location" do
     @station.location = nil
-    assert_not @station.valid?
+    refute @station.valid?
     assert_not_nil @station.errors[:location]
   end
 
