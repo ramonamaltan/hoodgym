@@ -1,0 +1,10 @@
+one:
+  email: ramonatest@gmail.com
+  encrypted_password: 123456
+  location: teststreet 100, Berlin 
+  admin: true
+
+two:
+  email: anditest@gmail.com
+  encrypted_password: 123456
+  location: teststreet 200, Berlin 
