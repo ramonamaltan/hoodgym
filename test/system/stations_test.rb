@@ -1,10 +1,13 @@
 require "application_system_test_case"
 
 class StationsTest < ApplicationSystemTestCase
-=begin   test "visiting the index" do
-    visit stations_url
+  # setup do
+  #   @station = stations(:beuth)
+  # end
+
+  # test "visiting the show" do
+  #   # visit "/stations/#{@station.id}"
   
-    assert_selector "h1", text: "Station"
-  end 
-=end
+  #   # assert_selector "h1", text: 'Beuth Hochschule'
+  # end 
 end
