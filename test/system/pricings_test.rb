@@ -6,4 +6,11 @@ class PricingsTest < ApplicationSystemTestCase
   
     assert_selector "h1", text: "Price Packages"
   end
+
+  test "Click on Logo leads you back to homepage" do
+    visit pricing_path
+
+    find('.header_logo').click
+    assert_equal root_path, page.current_path
+  end
 end
