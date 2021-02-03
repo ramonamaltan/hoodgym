@@ -13,10 +13,4 @@ class UserTest < ActiveSupport::TestCase
     user = User.new(email: 'test.org', encrypted_password: 'testpassword')
     assert_not user.valid?
   end
-
-  test 'destroy user should destroy linked rentals' do
-    assert_difference('Rental.count', -1) do
-      @user.destroy
-    end
-  end
 end
