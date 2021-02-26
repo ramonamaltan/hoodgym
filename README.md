@@ -5,7 +5,7 @@
 * [Setup](#setup)
 
 ### General info
-> Living in a global pandemic and gyms being regularly closed makes it harder to build and maintain a fitness routine. Especially people who like to train with weights are lacking the ressources to continue their training outside of a gym. That's where HoodGym comes into play. On stations around the city people can flexibly rent sports equipment (e.g. dumbbells, weights) via our Website, pay per minute and train. We give people the opportunity to do weight training outdoors outside of a gym.
+> Living in a global pandemic and gyms being regularly closed makes it harder to build and maintain a fitness routine. Especially people who like to train with weights are lacking the ressources to continue their training outside of a gym. That's where HoodGym comes into play. On stations around the city people can flexibly rent sports equipment (e.g. dumbbells, weights) via our [Website HoodGym](https://hoodgym-alpha.herokuapp.com/), pay per minute and train. We give people the opportunity to do weight training outdoors outside of a gym.
 
 ### Features
 * Stations overview (Where I can train/ Map integrated)
