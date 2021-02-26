@@ -5,6 +5,9 @@ class UserTest < ActiveSupport::TestCase
     @user = users(:one)
   end
 
+  should have_many :rentals
+  should have_many :equipment_offers
+
   test "user with email is valid" do
     assert @user.valid?
   end
