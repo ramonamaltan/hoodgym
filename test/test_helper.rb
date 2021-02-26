@@ -21,3 +21,10 @@ Capybara.register_driver :headless_chrome do |app|
 end
 Capybara.save_path = Rails.root.join('tmp/capybara')
 Capybara.javascript_driver = :headless_chrome
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :minitest
+    with.library :rails
+  end
+end

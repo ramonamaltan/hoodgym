@@ -5,6 +5,8 @@ class StationTest < ActiveSupport::TestCase
     @station = stations(:freeletics)
   end
 
+  should have_many(:equipment_offers)
+
   test "station with name and location should be valid" do
     assert @station.valid?
   end
