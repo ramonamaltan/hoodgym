@@ -31,6 +31,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initNavbarToggle } from '../components/init_navbar_toggle';
 import { initModalRented } from '../components/init_modal_rented';
 import { initGeoLocation } from '../components/init_geolocation';
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
@@ -39,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initModalRented();
   initGeoLocation();
   initAutocomplete();
+  initChatroomCable();
 });
