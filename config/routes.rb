@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/pricing', to: 'pages#pricing'
   get '/bookings', to: 'rentals#booking'
-  resources :chatrooms, only: [:show]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   resources :stations, only: [:index, :show, :new, :create] do 
     get '/training', to: 'equipment_offers#training', as: 'training'
   end
