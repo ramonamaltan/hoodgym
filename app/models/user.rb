@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :rentals, dependent: :destroy
   has_many :equipment_offers, through: :rentals
+  has_many :messages
 
   # validates :location, presence: true
 end

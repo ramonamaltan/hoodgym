@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_31_091315) do
+ActiveRecord::Schema.define(version: 2021_02_28_093041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,12 @@ ActiveRecord::Schema.define(version: 2021_01_31_091315) do
     t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "equipment_offers", force: :cascade do |t|
     t.string "name"
     t.boolean "availability", default: true
@@ -103,6 +109,16 @@ ActiveRecord::Schema.define(version: 2021_01_31_091315) do
     t.boolean "active"
     t.integer "item_id"
     t.index ["station_id"], name: "index_equipment_offers_on_station_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -144,6 +160,8 @@ ActiveRecord::Schema.define(version: 2021_01_31_091315) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "equipment_offers", "stations"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "rentals", "equipment_offers"
   add_foreign_key "rentals", "users"
 end

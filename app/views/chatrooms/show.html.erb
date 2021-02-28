@@ -1,0 +1,12 @@
+<div class="container">
+  <h1><%= @chatroom.name.capitalize %></h1>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render partial: 'messages/message', locals: { message: message } %>
+    <% end %>
+  </div>
+
+  <%= form_with(model: @message, url: [@chatroom, @message]) do |form| %>
+    <%= form.text_field :content, label: false, placeholder: "Enter Message", class: 'form-control mt-2' %>
+  <% end %>
+</div>
