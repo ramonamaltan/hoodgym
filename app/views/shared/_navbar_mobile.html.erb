@@ -4,7 +4,7 @@
       <%= image_tag('training-emoji2.jpg', alt: 'Hoodgym logo')  %>
     </a>
 
-    <div class="openMenu"><i class="fa fa-bars"></i></div>
+    <button class="openMenu btn-invisible"><i class="fa fa-bars"></i></button>
     <ul class="mainMenu header_links flex flex-jc-sa flex-ai-c">
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Pricing", pricing_path %></li>
@@ -18,7 +18,7 @@
         <%= link_to "Login", new_user_session_path, class: "btn-ghost my-3" %>
       <% end %>
 
-      <div class="closeMenu"><i class="fa fa-times"></i></div>
+      <button class="closeMenu btn-invisible"><i class="fa fa-times"></i></button>
     </ul>
 
   </nav>
