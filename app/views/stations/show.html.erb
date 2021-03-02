@@ -1,9 +1,10 @@
 <div class="home-container">
   
     <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
-      <div class="station-banner-text py-4 px-5">
+      <div class="station-banner-text pt-5 pb-3 px-5">
         <h1><%= @station.name %></h1>
       </div>
+      <span class="px-5"><%= link_to 'Train Now', station_training_path(@station), class: 'btn-red' %></span>
     </div>
 
   <div class="padding-outside">
@@ -13,15 +14,17 @@
         <div class="directions-block">
           <div class="directions-address"> <%= @station.location%></div>
           <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>" target="_blank" class="btn-red">Route</a>
-          <button id="geolocator" class="btn btn-red">Get Geolocation</button>
+          <%# <button id="geolocator" class="btn btn-red">Get Geolocation</button> %>
         </div>
       </div>
 
       <div class="item-list my-4">
         <h2>Item List</h2>
-        <ul><% @station.equipment_offers.each do |equip| %>
-          <li><%= equip.name %></li>
-        <% end %></ul>
+        <ul>
+          <% @station.equipment_offers.each do |equip| %>
+            <li><%= equip.name %></li>
+          <% end %>
+        </ul>
       </div>
       <%= link_to 'Back to all stations', stations_path, class: 'btn-ghost mt-4 mb-5', style: 'margin-left: 10%' %>
       <%= render 'shared/footer' %>
