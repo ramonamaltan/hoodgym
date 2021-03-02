@@ -7,15 +7,17 @@
     <button class="openMenu btn-invisible"><i class="fa fa-bars"></i></button>
     <ul class="mainMenu header_links flex flex-jc-sa flex-ai-c">
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Pricing", pricing_path %></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">About</a></li>
+      <li><%= link_to "All Stations", stations_path %></li>
 
       <%# Logic Login/ Logout Button Display %>
       <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "my-3" %>
+        <li><%= link_to "My Bookings", bookings_path %></li>
+        <li><%= link_to "Buy Credits", pricing_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "my-3" %></li>
       <% else %>
-        <%= link_to "Login", new_user_session_path, class: "btn-ghost my-3" %>
+        <li><%= link_to "Pricing", pricing_path %></li>
+        <li><a href="#">About</a></li>
+        <li><%= link_to "Login", new_user_session_path, class: "btn-ghost my-3" %></li>
       <% end %>
 
       <button class="closeMenu btn-invisible"><i class="fa fa-times"></i></button>
