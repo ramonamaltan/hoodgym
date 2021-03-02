@@ -1,8 +1,8 @@
-<div class="page-container">
+<main class="page-container">
   <h1 class="mx-3 text-center booking-hl">Your Bookings</h1>
-  <div class="booking-container">
+  <section class="booking-container">
     <% @bookings.each do |booking| %>
-      <div class="booking-card m-2">
+      <section class="booking-card m-2">
         <%= image_tag('home2_m_comp.jpg', alt: 'Man doing wallballs') %>
         <div class="booking-infos">
           <div>
@@ -14,8 +14,8 @@
           </div>
           <h2 class="booking-pricing">€9.99</h2>
         </div>
-      </div>
+      </section>
     <% end %>
-  </div>
+  </section>
   <%= render 'shared/footer' %>
-</div>
+</main>
