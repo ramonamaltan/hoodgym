@@ -1,31 +1,44 @@
-<div class="home-container">
+<main class="home-container">
   
-    <div class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
+    <section class="station-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'station1.jpg' %>);">
       <div class="station-banner-text pt-5 pb-3 px-5">
         <h1><%= @station.name %></h1>
       </div>
-      <span class="px-5"><%= link_to 'Train Now', station_training_path(@station), class: 'btn-red' %></span>
-    </div>
+      <% if @station.equipment_offers.count.positive? %>
+        <span class="px-5"><%= link_to 'Train Now', station_training_path(@station), class: 'btn-red' %></span>
+      <% end %>
+    </section>
 
   <div class="padding-outside">
     <div class="container-text">
 
       <div class="directions-flex">
-        <div class="directions-block">
-          <div class="directions-address"> <%= @station.location%></div>
+        <section class="directions-block">
+          <address class="directions-address"> <%= @station.location%></address>
           <a href="https://www.google.com/maps/search/?api=1&query=<%=@station.latitude%>,<%=@station.longitude%>" target="_blank" class="btn-red">Route</a>
           <%# <button id="geolocator" class="btn btn-red">Get Geolocation</button> %>
-        </div>
+        </section>
       </div>
 
-      <div class="item-list my-4">
+      <section class="item-list my-4">
         <h2>Item List</h2>
-        <ul>
-          <% @station.equipment_offers.each do |equip| %>
-            <li><%= equip.name %></li>
-          <% end %>
-        </ul>
-      </div>
+        <% if @station.equipment_offers.count.positive? %>
+          <ul>
+            <% @station.equipment_offers.each do |equip| %>
+              <li><%= equip.name %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <ul>
+            <li>5kg Dumbbell</li>
+            <li>8kg Dumbbell</li>
+            <li>10kg Dumbbell</li>
+            <li>14kg Dumbbell</li>
+            <li>16kg Dumbbell</li>
+            <li>20kg Dumbbell</li>
+          </ul>
+        <% end %>
+      </section>
       <%= link_to 'Back to all stations', stations_path, class: 'btn-ghost mt-4 mb-5', style: 'margin-left: 10%' %>
       <%= render 'shared/footer' %>
     </div>
@@ -34,4 +47,4 @@
     <div id="map-show" data-marker="<%= @marker.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
   
-</div>
+</main>
