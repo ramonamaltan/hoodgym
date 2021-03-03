@@ -33,7 +33,6 @@ gem 'pundit'
 
 gem 'geocoder'
 gem 'nokogiri'
-
 gem 'cloudinary'
 
 gem 'rails_admin'
