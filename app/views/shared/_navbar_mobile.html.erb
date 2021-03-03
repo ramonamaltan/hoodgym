@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
         <li><%= link_to "My Bookings", bookings_path %></li>
         <li><%= link_to "Buy Credits", pricing_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "my-3" %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn-underlined my-3" %></li>
       <% else %>
         <li><%= link_to "Pricing", pricing_path %></li>
         <li><a href="#">About</a></li>
