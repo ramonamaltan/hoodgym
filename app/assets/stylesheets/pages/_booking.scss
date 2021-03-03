@@ -1,15 +1,23 @@
 .booking-container {
   margin: 0 auto;
-  max-width: 85%;
+  max-width: 80%;
   text-align: center;
+
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0.001rem solid white;
+  }
 }
 
 .col {
   padding: 0;
+  margin: 0 auto;
 }
 
 .row {
   flex-wrap: nowrap;
+  // align-items: center;
 }
 
 @media (max-width: 659px) {
