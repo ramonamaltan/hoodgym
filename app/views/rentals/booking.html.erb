@@ -1,19 +1,32 @@
 <main class="page-container">
   <h1 class="mx-3 text-center booking-hl">Your Bookings</h1>
+
   <section class="booking-container">
+    <header class="flex">
+      <h6 class="col">Station</h6>
+      <h6 class="col">Equipment</h6>
+      <h6 class="col"><i class="far fa-calendar-alt"></i></h6>
+      <h6 class="col"><i class="far fa-clock"></i></h6>
+    </header>
+  
     <% @bookings.each do |booking| %>
-      <section class="booking-card m-2">
-        <%= image_tag('home2_m_comp.jpg', alt: 'Man doing wallballs') %>
-        <div class="booking-infos">
-          <div>
-            <h2><%= booking.equipment_offer.station.name %></h2>
-            <p>Equipment: <%= booking.equipment_offer.name %></p> 
-            <p>Date: <%= booking.begin_at.strftime("%d.%m.%Y") %></p>
-            <p>Time: <%= booking.begin_at.strftime("%I:%M%p") %>
-              <%= booking.end_at.strftime("to %I:%M%p") if !booking.end_at.nil? %></p>
-          </div>
-          <h2 class="booking-pricing">€9.99</h2>
-        </div>
+      <section class="flex">
+        <p class="col"><%= booking.equipment_offer.station.name %></p>
+        <p class="col"><%= booking.equipment_offer.name %></p> 
+        <p><%= booking.begin_at.strftime("%d.%m.%Y") %></p>
+
+        <% t = (booking.end_at - booking.begin_at).round.abs %>
+        <% mm, ss = t.divmod(60) %>
+        <% hh, mm = mm.divmod(60) %>
+        <% if ss.between?(0, 10) %>
+          < class="col"><%= "#{hh}:#{mm}:0#{ss}" %> </h6>
+        <% elsif mm.between?(0, 10) %>
+          <h6 class="col"><%= "#{hh}:0#{mm}:#{ss}" %> </h6>
+        <% elsif hh.between?(0, 10) %>
+          <h6 class="col"><%= "#{hh}:#{mm}:0#{ss}" %> </h6>
+        <% else %>
+          <h6 class="col"><%= "#{hh}:#{mm}:#{ss}" %> </h6>
+        <% end %>
       </section>
     <% end %>
   </section>

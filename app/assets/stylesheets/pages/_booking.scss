@@ -1,51 +1,17 @@
 .booking-container {
-  margin-right: 12px;
-  margin-left: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 85%;
 }
 
-.booking-card {
-  max-width: 300px;
-  overflow: hidden;
-  background: $hg-overlay;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 3px;
-
-  img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  h2 {
-    font-size: 1rem;
-    margin: 0;
-  }
-
-  p {
-    font-size: 0.8rem;
-    opacity: .7;
-    margin: 0;
-  }
-
-  .booking-infos {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 
 @media (max-width: 659px) {
   .booking-container {
-    margin-top: 1.25rem;
+    max-width: 85%;
   }
 }
 
 @media (min-width: 660px) {
   .booking-container {
-    margin-top: 42px;
+    max-width: 85%;
   }
 }
