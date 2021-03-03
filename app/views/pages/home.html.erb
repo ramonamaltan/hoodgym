@@ -15,7 +15,7 @@
       <p>Explore rental stations nearby</p>
       <%= link_to 'Discover', stations_path, class: 'btn-red mt-3' %>
     </section>
-    <%= image_tag('home2_m_comp.jpg', alt: 'Man doing wallballs', style: 'width: 100%; height:30vh; object-fit: cover;')  %>
+    <%= image_tag('home2_m_comp.jpg', alt: 'Man doing wallballs', style: 'width: 100%; height:30vh; object-fit: cover;', loading: "lazy")  %>
     <section class="section-pricing my-3 py-4">
       <header class="my-4">
         <h1>Price Packages</h1>
@@ -37,7 +37,7 @@
         </section>
       </section>
     </section>
-    <%= image_tag('home3_m_comp.jpg', alt: 'Woman squatting with weights', style: 'width: 100%; height:30vh; object-fit: cover;')  %>
+    <%= image_tag('home3_m_comp.jpg', alt: 'Woman squatting with weights', style: 'width: 100%; height:30vh; object-fit: cover;', loading: 'lazy')  %>
   </div>
   
   <%= render 'shared/footer' %>
