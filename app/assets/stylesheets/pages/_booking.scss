@@ -1,8 +1,16 @@
 .booking-container {
   margin: 0 auto;
   max-width: 85%;
+  text-align: center;
 }
 
+.col {
+  padding: 0;
+}
+
+.row {
+  flex-wrap: nowrap;
+}
 
 @media (max-width: 659px) {
   .booking-container {
