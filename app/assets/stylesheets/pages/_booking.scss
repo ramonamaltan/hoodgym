@@ -10,24 +10,24 @@
   }
 }
 
-.col {
+.col, .col-5 {
   padding: 0;
   margin: 0 auto;
 }
 
 .row {
   flex-wrap: nowrap;
-  // align-items: center;
+  align-items: center;
 }
 
-@media (max-width: 659px) {
+@media (max-width: 768px) {
   .booking-container {
     max-width: 85%;
   }
 }
 
-@media (min-width: 660px) {
+@media (min-width: 1200px) {
   .booking-container {
-    max-width: 85%;
+    max-width: 50%;
   }
 }

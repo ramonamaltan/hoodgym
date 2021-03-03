@@ -3,8 +3,7 @@
 
   <section class="booking-container">
     <header class="row">
-      <h6 class="col">Station<br>Equipment</h6>
-      <%# <h6 class="col">Equipment</h6> %>
+      <h6 class="col-5">Station<br>Equipment</h6>
       <h6 class="col"><i class="far fa-calendar-alt"></i></h6>
       <h6 class="col"><i class="far fa-clock"></i></h6>
     </header>
@@ -12,8 +11,7 @@
     <% @bookings.each do |booking| %>
     <hr>
       <section class="row">
-        <p class="col"><%= booking.equipment_offer.station.name %><br><%= booking.equipment_offer.name %></p>
-        <%# <p class="col"><%= booking.equipment_offer.name %></p> 
+        <p class="col-5"><%= booking.equipment_offer.station.name %><br><%= booking.equipment_offer.name %></p>
         <p class="col"><%= booking.begin_at.strftime("%b %d, %y") %></p>
 
         <% t = (booking.end_at - booking.begin_at).round.abs %>
